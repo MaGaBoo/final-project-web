@@ -3,7 +3,7 @@ import './InputGroup.scss';
 const InputGroup = ({ label, id }) => {
   return (
     <div>
-      <label>{label}</label>
+      <label>Hola</label>
       <input />
     </div>
   )
