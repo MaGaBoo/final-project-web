@@ -1,9 +1,9 @@
 import './InputGroup.scss';
 
-const InputGroup = () => {
+const InputGroup = ({ label, id }) => {
   return (
     <div>
-      <label>Hola</label>
+      <label>{label}</label>
       <input />
     </div>
   )

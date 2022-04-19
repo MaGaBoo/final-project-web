@@ -1,0 +1,19 @@
+[
+    {
+        "commonName": "Monstera",
+        "scientificName": "Monstera deliciosa",
+        "description": "Easy-care, fast-growing tropical plant.",
+        "height": "80",
+        "image": "https://images.unsplash.com/photo-1617002875212-2d64c72ea93b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "category": "Evergreen",
+        "price": "16",
+        "plantCare": {
+            "temperature": "Adapts well to indoor",
+            "light": "Monstera likes bright, indirect sunlight",
+            "watering": "Leave the soil dry out in between waterings and mist the foliage regularly"
+        },
+        "dificulty": "Easy-peasy",
+        "petFriendly": "false"
+
+    }
+]
