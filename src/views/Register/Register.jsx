@@ -10,7 +10,7 @@ import './Register.scss';
 
 const schema = yup.object({
   name: yup.string().required(),
-  location: yup.string().required(),
+  location: yup.string(),
   email: yup.string().email().required(),
   password: yup.string().min(8, 'Provide at least 8 characters').required(),
 }).required();
