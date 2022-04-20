@@ -20,7 +20,6 @@ const NewPlant = () => {
     } else {
       console.log('pa dentro')
     }
-
   }
 
   return (
@@ -58,6 +57,13 @@ const NewPlant = () => {
         <InputGroup
           label="Image:"
           id="image"
+          type="text"
+          register={register}
+        />
+
+        <InputGroup
+          label="Category:"
+          id="category"
           type="text"
           register={register}
         />
