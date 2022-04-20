@@ -76,6 +76,13 @@ const NewPlant = () => {
         />
 
         <InputGroup
+          label="Category:"
+          id="category"
+          type="text"
+          register={register}
+        />
+
+        <InputGroup
           label="Price:"
           id="price"
           type="number"
