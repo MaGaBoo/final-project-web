@@ -1,4 +1,3 @@
 import http from './BaseService';
 
-
-export const register = (data) => http.post('/users', data);
+export const getCurrentUser = () => http.get('/users/me');
