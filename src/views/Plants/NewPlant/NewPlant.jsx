@@ -3,30 +3,43 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { createPlant } from '../../../services/PlantService';
 import './NewPlant.scss';
+import { useNavigate } from 'react-router';
 
 const NewPlant = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errors, setErrors] = useState(false);
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data)
-    const { commonName, scientificName, description, height, image, price, difficulty, petFriendly } = data
+    const { user, commonName, scientificName, description, height, image, price, difficulty, petFriendly } = data
     const { temperature, light, watering } = data.plantCare
 
-    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !petFriendly) {
+
+    if (!user || !commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !petFriendly) {
       console.log('pa tu casa')
       setErrors(true)
     } else {
-      console.log('pa dentro')
+      createPlant({...data})
+      .then((plant) => {
+        navigate('/')
+      })
+        .catch(err => console.log(err?.response?.data))
     }
-
   }
 
   return (
     <>
       <h1>Create plant</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <InputGroup
+            label="User:"
+            id="user"
+            type="text"
+            register={register}
+          />
+
         <InputGroup
           label="Name:"
           id="commonName"
@@ -63,6 +76,13 @@ const NewPlant = () => {
         />
 
         <InputGroup
+          label="Category:"
+          id="category"
+          type="text"
+          register={register}
+        />
+
+        <InputGroup
           label="Price:"
           id="price"
           type="number"
@@ -72,6 +92,13 @@ const NewPlant = () => {
         <InputGroup
           label="Temperature:"
           id="plantCare.temperature"
+          type="text"
+          register={register}
+        />
+
+        <InputGroup
+          label="Category:"
+          id="category"
           type="text"
           register={register}
         />

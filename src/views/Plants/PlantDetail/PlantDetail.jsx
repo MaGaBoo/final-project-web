@@ -12,8 +12,6 @@ const PlantDetail = () => {
       .then(plant => setPlant(plant))
   },[])
 
-  console.log(plant)
-
   return (
     <>
       <h1>Plant detail</h1>
@@ -22,6 +20,7 @@ const PlantDetail = () => {
         <p>Name: {plant.commonName}</p>
         <p>Scientific name: {plant.scientificName}</p>
         <p>Description: {plant.description}</p>
+        <p>Description: {plant.category}</p>
         <p>Height: {plant.height}</p>
         <img src={plant.image} alt={plant.commonName} />
         <p>Price: {plant.price}€</p>
