@@ -10,22 +10,28 @@ const PlantDetail = () => {
   useEffect(() => {
     getPlant(id)
       .then(plant => setPlant(plant))
-  })
+  },[])
+
+  console.log(plant)
 
   return (
     <>
       <h1>Plant detail</h1>
-      <p>Name: {plant.commonName}</p>
-      <p>Scientific name: {plant.scientificName}</p>
-      <p>Description: {plant.description}</p>
-      <p>Height: {plant.height}</p>
-      <img src={plant.image} alt={plant.commonName} />
-      <p>Price: {plant.price}€</p>
-      <p>Temperature: {plant.plantCare.temperature}</p>
-      <p>Light: {plant.plantCare.light}</p>
-      <p>Watering: {plant.plantCare.watering}</p>
-      <p>Difficulty: {plant.difficulty}</p>
-      <p>Pet Friendly: {plant.petFriendly}</p>
+      {plant && plant.plantCare &&
+        <>
+        <p>Name: {plant.commonName}</p>
+        <p>Scientific name: {plant.scientificName}</p>
+        <p>Description: {plant.description}</p>
+        <p>Height: {plant.height}</p>
+        <img src={plant.image} alt={plant.commonName} />
+        <p>Price: {plant.price}€</p>
+        <p>Temperature: {plant.plantCare.temperature}</p>
+        <p>Light: {plant.plantCare.light}</p>
+        <p>Watering: {plant.plantCare.watering}</p>
+        <p>Difficulty: {plant.difficulty}</p>
+        <p>Pet Friendly: {plant.petFriendly}</p>
+        </>
+      }
     </>
   )
 }
