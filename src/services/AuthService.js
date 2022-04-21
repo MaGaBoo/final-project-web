@@ -1,5 +1,6 @@
-import http from './BaseService';
+import createHttp from './BaseService';
 
+const http = createHttp({ useAccessToken: true })
 
-export const register = (data) => http.post('/users', data);
-export const login = (data) => http.post('/login', data);
+export const registerRequest = (data) => http.post('/users', data);
+export const loginRequest = (data) => http.post('/login', data);
