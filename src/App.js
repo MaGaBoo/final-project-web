@@ -25,13 +25,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
 
             <Route path="/" element={<ProtectedRoute />}>
               <Route path="profile" element={<Profile />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/plant/new" element={<NewPlant />} />
-              <Route path="/plant/:id/edit" element={<EditPlant />} />
-              <Route path="/plant/:id" element={<PlantDetail />} />
+              <Route path="plant/new" element={<NewPlant />} />
+              <Route path="plant/:id/edit" element={<EditPlant />} />
+              <Route path="plant/:id" element={<PlantDetail />} />
             </Route>
           </Routes>
         )}

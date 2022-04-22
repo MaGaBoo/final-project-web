@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useLocation, useNavigate } from 'react-router-dom';
-import { login as loginRequest } from '../../services/AuthService';
+import { loginRequest } from '../../services/AuthService';
 import InputGroup from '../../components/InputGroup/InputGroup';
 import { useAuthContext } from '../../contexts/AuthContext';
 import './Login.scss';
@@ -14,35 +14,34 @@ const schema = yup.object({
 }).required();
 
 const Login = () => {
-
   const navigate = useNavigate();
+  
   let location = useLocation(); // por qué let??
-
-  let from = location.state?.from?.pathname || '/profile'; // esta línea es WTF
+  let from = location.state?.from?.pathname || "/profile"; // esta línea es WTF
 
   const { login } = useAuthContext();
    
-
-  const [backErrors, setBackErrors] = useState({});
+  const [error, setError] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, formState:{ errors }, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
+    console.log(data) // info del formulario
 
-    setBackErrors({});
     setIsSubmitting(true);
+    setError(undefined);
 
    loginRequest(data)
-   .then((user) => {
-     console.log(user)
-     login(user.access_token, () => navigate(from, { replace: true })) // esto WTF también
-   })
-   .catch(err => {
-     setBackErrors(err?.response?.data?.errors)
-   })
-   .finally(() => {
-    setIsSubmitting(false)
-   })
+    .then((user) => {
+        console.log(user) // objeto con el token - ¿el token es el user?
+        login(user.access_token, () => navigate(from, { replace: true }))
+    })
+    .catch(err => {
+      setError(err?.response?.data?.message)
+    })
+    .finally(() => {
+      setIsSubmitting(false)
+    })
   };
 
   return (
@@ -56,7 +55,7 @@ const Login = () => {
         id="email"
         type="email"
         register={register}
-        error={backErrors?.email || errors.email?.message}
+        error={error || errors.email?.message}
         />
         
         <InputGroup
@@ -64,7 +63,7 @@ const Login = () => {
         id="password"
         type="text"
         register={register}
-        error={backErrors?.password || errors.password?.message}
+        error={error || errors.password?.message}
         />
 
         <button>{isSubmitting ? 'Login...' : 'Submit'}</button> 
