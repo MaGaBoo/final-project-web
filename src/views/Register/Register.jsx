@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useNavigate } from 'react-router-dom';
-import { register as registerRequest } from '../../services/AuthService';
+import { registerRequest } from '../../services/AuthService';
 import InputGroup from '../../components/InputGroup/InputGroup';
 import './Register.scss';
 

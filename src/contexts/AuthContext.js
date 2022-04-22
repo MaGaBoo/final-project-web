@@ -4,50 +4,49 @@ import { getCurrentUser } from '../services/UsersService';
 import { verifyJWT } from '../utils/jwtHelper'
 
 const AuthContext = createContext();
-
 export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
-    const [user, setUser] = useState();
-    const [isAuthenticationFetched, setIsAuthenticationFetched] = useState(false);
+  const [user, setUser] = useState();
+  const [isAuthenticationFetched, setIsAuthenticationFetched] = useState(false);
 
-    const login = (token, navigateCb) => {
-        setToken(token)
-        getUser(navigateCb)
-    };
+  const login = (token, navigateCb) => {
+      setToken(token)
+      getUser(navigateCb)
+  };
 
-    const getUser = (cb) => {
-        getCurrentUser()
-        .then(user => {
-            setUser(user)
-            setIsAuthenticationFetched(true)
+  const getUser = (cb) => {
+    getCurrentUser()
+    .then(user => {
+      setUser(user)
+      setIsAuthenticationFetched(true)
+      
+      cb && cb()
+    })
+  }
 
-            cb && cb()
-        })
+  useEffect(() => {
+    if (getAccessToken()) {
+      if ( !verifyJWT(getAccessToken()) ) {
+        logout()
+      } else {
+        getUser()
+      }
+    } else {
+      setIsAuthenticationFetched(true)
     }
+  }, [])
 
-    useEffect(() => {
-        if(getAccessToken()) {
-            if(!verifyJWT(getAccessToken()) ) {
-                logout()
-            } else {
-                getUser() //aquí te traes al user si se ha verificado el token
-            }
-        } else {
-            setIsAuthenticationFetched(true)
-        }
-    }, []);
-
-    const value = {
-        user,
-        isAuthenticationFetched,
-        login
-    }
-    return (
-        <AuthContext.Provider value={value}>
-            {children}
-        </AuthContext.Provider>
-    )
+  const value = {
+      user,
+      isAuthenticationFetched,
+      login
+  }
+  return (
+      <AuthContext.Provider value={value}>
+          {children}
+      </AuthContext.Provider>
+  )
 };
 
 
