@@ -9,6 +9,9 @@ import { Routes, Route } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Profile from './views/Profile/Profile';
+import Evergreen from './views/Categories/Evergreen/Evergreen';
+import Orchids from './views/Categories/Orchids/Orchids';
+import CactusAndSucculents from './views/Categories/CactusAndSucculents/CactusAndSucculents';
 import { useAuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./guards/ProtectedRoute";
 
@@ -27,6 +30,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/evergreen" element={<Evergreen />} />
+            <Route path="/orchids" element={<Orchids />} />
+            <Route path="/cactus-and-succulents" element={<CactusAndSucculents />} />
 
 
             <Route path="/" element={<ProtectedRoute />}>
