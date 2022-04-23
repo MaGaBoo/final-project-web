@@ -10,7 +10,7 @@ const PlantDetail = () => {
   useEffect(() => {
     getPlant(id)
       .then(plant => setPlant(plant))
-  },[])
+  },[id])
 
   return (
     <>

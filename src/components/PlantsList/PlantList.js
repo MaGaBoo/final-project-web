@@ -3,11 +3,13 @@ import plants from "../../data/plants.json";
 import './PlantList.scss';
 
 const PlantsList = () => {
+
+  
   return (
     <div>
       {plants.map((plant) => {
         return <li>
-        <Link to={`/plants/${plant.id}`} key={plant.id}>{plant.commonName}</Link>;
+        <Link to={`/plant/${plant.id}`} key={plant.id}>{plant.commonName}</Link>;
       
         </li>
       })}
@@ -16,3 +18,4 @@ const PlantsList = () => {
 };
 
 export default PlantsList;
+

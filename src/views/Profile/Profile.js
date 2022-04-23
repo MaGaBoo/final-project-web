@@ -1,5 +1,6 @@
 import { useAuthContext } from "../../contexts/AuthContext";
 import { deletePlant } from "../../services/PlantService";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user, getUser } = useAuthContext();
@@ -20,7 +21,7 @@ const Profile = () => {
       {user.plants.map(plant => {
         return (
           <div>
-            <h3>{plant.commonName}</h3>
+            <Link to={`/plant/${plant.id}`}>{plant.commonName}</Link>
             <button onClick={() => handleDelete(plant.id)}>Delete</button>
           </div>
         )
