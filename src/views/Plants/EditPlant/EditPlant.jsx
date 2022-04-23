@@ -29,7 +29,7 @@ const EditPlant = () => {
     const { commonName, scientificName, description, height, image, price, difficulty, petFriendly, category, plantCare } = data
     const { temperature, light, watering } = data.plantCare
 
-    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !category) {
+    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !category || !petFriendly) {
       console.log('falta info para actualizar')
       setErrors(true)
     } else {
