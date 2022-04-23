@@ -17,7 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
   
   let location = useLocation(); // por qué let??
-  let from = location.state?.from?.pathname || "/profile"; // esta línea es WTF
+  let from = location.state?.from?.pathname || "/"; 
 
   const { login } = useAuthContext();
    
