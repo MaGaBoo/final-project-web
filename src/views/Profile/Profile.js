@@ -1,4 +1,3 @@
-
 import { useAuthContext } from "../../contexts/AuthContext"
 
 const Profile = () => {

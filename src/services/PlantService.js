@@ -1,4 +1,6 @@
-import http from './BaseService';
+import createHttp from './BaseService';
+
+const http = createHttp(true);
 
 export const createPlant = (data) => http.post('/plant/new', data);
 export const getPlant = (id) => http.get(`/plant/${id}`);
