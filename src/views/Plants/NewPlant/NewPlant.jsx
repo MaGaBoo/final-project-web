@@ -15,12 +15,12 @@ const NewPlant = () => {
   const { user, getUser } = useAuthContext();
 
   const onSubmit = (data) => {
-    console.log('mi data', data)
+    console.log(data)
     const { commonName, scientificName, description, height, image, price, difficulty, petFriendly } = data
     const { temperature, light, watering } = data.plantCare
 
 
-    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !petFriendly) {
+    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty) {
       console.log('pa tu casa')
       setErrors(true)
     } else {
@@ -29,13 +29,14 @@ const NewPlant = () => {
         getUser()
         navigate('/profile')
       })
-        .catch(err => console.log(err?.response?.data))
+        .catch(err => setErrors(err?.response?.data?.errors))
     }
   }
 
   return (
     <>
       <h1>Create plant</h1>
+        {errors && <div>Check all fields!</div>}
       <form onSubmit={handleSubmit(onSubmit)}>
       
         <InputGroup
