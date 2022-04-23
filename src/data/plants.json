@@ -1,6 +1,7 @@
 [
     {
-        "commonName": "Monstera",
+        "id": "1",
+        "commonName": "Swiss cheese plant",
         "scientificName": "Monstera deliciosa",
         "description": "Easy-care, fast-growing tropical plant.",
         "height": "80",
@@ -18,8 +19,9 @@
     },
 
     {
-        "commonName": "Monstera obliqua",
-        "scientificName": "Monstera obliqua",
+        "id": "2",
+        "commonName": "Monkey mask plant",
+        "scientificName": "Monstera Adansonii",
         "description": "Variety of monstera that is characterized by having larger holes in the leaves. Reaches great size if you take good care of it!",
         "height": "80",
         "image": "https://images.unsplash.com/photo-1609841265900-80901658e5d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
@@ -36,12 +38,13 @@
     },
 
     {
-        "commonName": "Espada de San Jorge",
+        "id": "3",
+        "commonName": "Snake plant",
         "scientificName": "Sansevieria trifasciata",
         "description": "An easy care adaptable plant. Idea to have in the bedroom, as it purifies the environment (I don't say it, NASA says it).",
         "height": "50",
         "image": "https://images.unsplash.com/photo-1600958568384-51f4289e943a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-        "category": "Succulent",
+        "category": "Cactus and Succulents",
         "price": "15",
         "plantCare": {
             "temperature": "It perfectly withstands temperatures between 5 and 26ºC degrees.",
@@ -54,7 +57,8 @@
     },
 
     {
-        "commonName": "Maranta tricolor",
+        "id": "4",
+        "commonName": "Prayer plant",
         "scientificName": "Maranata Fascinator Leuconeura",
         "description": "Known as 'the prayer plant' this tropical species is a spectacle of moving leaves and vintage-looking colors.",
         "height": "30",
@@ -72,7 +76,8 @@
     },
 
     {
-        "commonName": "Medinilla",
+        "id": "5",
+        "commonName": "Rose grape",
         "scientificName": "Medinilla magnifica",
         "description": "Tropical plant from the Philippines and Madagascar. It has an amazing flowering and colors, you are going to love it one way or another.",
         "height": "40",
@@ -90,7 +95,8 @@
     },
 
     {
-        "commonName": "Orquidea mariposa",
+        "id": "6",
+        "commonName": "Moth orchid",
         "scientificName": "Orquídea Phaleonopsis-White",
         "description": "Beautiful orchid whose leaves resemble the wings of a butterfly, hence its name.",
         "height": "30",
@@ -108,7 +114,8 @@
     },
 
     {
-        "commonName": "Pachira",
+        "id": "7",
+        "commonName": "Money tree",
         "scientificName": "Pachira aquatica",
         "description": "This beautiful tropical tree will be the star of your living room. In good conditions it can grow up to the ceiling and if you have it outdoors in the right climate, it will give you flowers and fruits.",
         "height": "150",
@@ -126,8 +133,9 @@
     },
 
     {
-        "commonName": "Dracena limón",
-        "scientificName": "Dracaena Fragrans Lemon Lime ",
+        "id": "8",
+        "commonName": "Striped dracaena",
+        "scientificName": "Dracaena Fragrans Lemon Lime",
         "description": "It is known as the 'dragon plant' due to its red sap. It is easy to care for and reaches a spectacular size.",
         "height": "110",
         "image": "https://images.unsplash.com/photo-1612363066736-a4a933de2cab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
@@ -135,7 +143,7 @@
         "price": "55",
         "plantCare": {
             "temperature": "Like all tropical plants, it wants stable temperatures and not to be cold.",
-            "light": "It can live with low lighting (it is the typical plant that you find in offices) but if you provide it with a lot of indirect light it will look beautiful.",
+            "light": "She can live with low lighting (it is the typical plant that you find in offices) but if you provide her with a lot of indirect light she will look beautiful.",
             "watering": "It requires moisture, but be careful not to get waterlogged or its roots will rot. If it lacks irrigation, its leaves will tell you by turning yellowish."
         },
         "dificulty": "She practically takes care of herself.",
@@ -144,7 +152,8 @@
     },
 
     {
-        "commonName": "Pilea or planta del dinero china",
+        "id": "9",
+        "commonName": "Pilea or chinese money plant",
         "scientificName": "Pilea peperomioides",
         "description": "One of the most loved plants on Instagram. Its round leaves are very striking and it does not require much care.",
         "height": "14",
@@ -154,9 +163,9 @@
         "plantCare": {
             "temperature": "Happy at indoors, stable temperatures.",
             "light": "She likes light a lot but without the sun touching her directly.",
-            "watering": "Moderate. Let the substrate dry between watering and watering."
+            "watering": "Moderate. Let the substrate dry between waterings."
         },
-        "dificulty": "Not very difficult.I recommend turning it from time to time so that it does not lose shape, but do it little by little so as not to disorient the plant.",
+        "dificulty": "Not really difficult. I recommend you turning it from time to time so that it does not lose shape, but do it little by little so as not to disorient the plant.",
         "petFriendly": "true"
 
     }
