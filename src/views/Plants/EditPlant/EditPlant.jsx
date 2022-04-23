@@ -3,11 +3,14 @@ import { useForm } from 'react-hook-form';
 import InputGroup from '../../../components/InputGroup/InputGroup';
 import { useNavigate, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
+import DropDownGroup from '../../../components/DropDownGroup/DropDownGroup';
+import { useAuthContext } from '../../../contexts/AuthContext';
 import './EditPlant.scss';
 
 const EditPlant = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState(false)
+  const [errors, setErrors] = useState(false);
+  const { getUser } = useAuthContext();
   const [plant, setPlant] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -26,16 +29,18 @@ const EditPlant = () => {
     const { commonName, scientificName, description, height, image, price, difficulty, petFriendly, category, plantCare } = data
     const { temperature, light, watering } = data.plantCare
 
-    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !petFriendly || !category) {
+    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !category) {
       console.log('falta info para actualizar')
       setErrors(true)
     } else {
       const updatedPlant = {commonName, scientificName, description, height, image, price, difficulty, petFriendly,category, plantCare}
       updatePlant(plant.id, updatedPlant)
         .then((plant) => {
-          navigate('/')
+          getUser()
+          navigate('/profile')
         })
         .catch(err => console.log(err?.response?.data))
+        .finally(() => setIsSubmitting(false))
     }
   }
 
@@ -78,10 +83,10 @@ const EditPlant = () => {
           register={register}
         />
 
-        <InputGroup
+        <DropDownGroup
           label="Category:"
           id="category"
-          type="text"
+          values={["Evergreen", "Orchids", "Cactus and Succulents"]}
           register={register}
         />
 
@@ -123,7 +128,7 @@ const EditPlant = () => {
         <InputGroup
           label="Pet Friendly:"
           id="petFriendly"
-          type="text"
+          type="checkbox"
           register={register}
         />
 
