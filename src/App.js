@@ -7,6 +7,7 @@ import PlantDetail from "./views/Plants/PlantDetail/PlantDetail";
 import Register from "./views/Register/Register";
 import { Routes, Route } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import Profile from './views/Profile/Profile';
 import { useAuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./guards/ProtectedRoute";
@@ -37,6 +38,7 @@ function App() {
           </Routes>
         )}
       </div>
+    <Footer/>
     </div>
   );
 }
