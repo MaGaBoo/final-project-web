@@ -14,7 +14,12 @@
             "watering": "Leave the soil dry out in between waterings and mist the foliage regularly."
         },
         "dificulty": "Easy-peasy.",
-        "petFriendly": "false"
+        "petFriendly": "false",
+        "user" : {
+            "name": "John Doe",
+            "location": "Barcelona",
+            "image": "https://tse1.mm.bing.net/th?id=OIP.DYkVLAlg61Gct2rsYoHLxQHaHa&pid=Api&rs=1&c=1&qlt=95&w=112&h=112"
+        }
 
     },
 
@@ -33,7 +38,12 @@
             "watering": "More spraying than watering. You can put her in the shower from time to time."
         },
         "dificulty": "Good choice for beginers.",
-        "petFriendly": "false"
+        "petFriendly": "false",
+        "user" : {
+            "name": "John Doe",
+            "location": "Barcelona",
+            "image": "https://tse1.mm.bing.net/th?id=OIP.DYkVLAlg61Gct2rsYoHLxQHaHa&pid=Api&rs=1&c=1&qlt=95&w=112&h=112"
+        }
 
     },
 
@@ -52,7 +62,12 @@
             "watering": "It will appreciate that you forget to water it. In winter, water it very occasionally or put it in a dish of water for ten minutes."
         },
         "dificulty": "A great option for inexperienced planters. Just remember not to over water.",
-        "petFriendly": "true"
+        "petFriendly": "true",
+        "user" : {
+            "name": "John Doe",
+            "location": "Barcelona",
+            "image": "https://tse1.mm.bing.net/th?id=OIP.DYkVLAlg61Gct2rsYoHLxQHaHa&pid=Api&rs=1&c=1&qlt=95&w=112&h=112"
+        }
 
     },
 
@@ -71,7 +86,12 @@
             "watering": "Keep the soil moist but avoid waterlogging. During the winter, water it a little less."
         },
         "dificulty": "Easy to care for if you already have some experience with plants.",
-        "petFriendly": "true"
+        "petFriendly": "true",
+        "user" : {
+            "name": "Robert C.",
+            "location": "Madrid",
+            "image": "https://tse2.mm.bing.net/th?id=OIP.kXjrpIWATE7R-si2Y1jVuwHaHa&pid=Api&P=0&w=172&h=172"
+        }
 
     },
 
@@ -90,7 +110,12 @@
             "watering": "Keep the substrate moist and spray its leaves from time to time to maintain a high level of humidity. Many people use mineral or distilled water for irrigation."
         },
         "dificulty": "Intermediate level, if you do not give her the pampering she needs, she will die hopelessly.",
-        "petFriendly": "true"
+        "petFriendly": "true",
+        "user" : {
+            "name": "Robert C.",
+            "location": "Madrid",
+            "image": "https://tse2.mm.bing.net/th?id=OIP.kXjrpIWATE7R-si2Y1jVuwHaHa&pid=Api&P=0&w=172&h=172"
+        }
 
     },
 
@@ -109,7 +134,12 @@
             "watering": "It's a bit special. Water it with warm water and only in the morning, since its leaves need to dry throughout the day. Keep the soil moist but don't overdo it, as the plant could rot."
         },
         "dificulty": "It is not the easiest to care for, it requires experience and constant care.",
-        "petFriendly": "true"
+        "petFriendly": "true",
+        "user" : {
+            "name": "Robert C.",
+            "location": "Madrid",
+            "image": "https://tse2.mm.bing.net/th?id=OIP.kXjrpIWATE7R-si2Y1jVuwHaHa&pid=Api&P=0&w=172&h=172"
+        }
 
     },
 
@@ -128,7 +158,12 @@
             "watering": "It appreciates that you water it little. Of course, it needs a lot of ambient humidity, spray often or get a humidifier."
         },
         "dificulty": "Easy-peasy if you remember to mist properly.",
-        "petFriendly": "true"
+        "petFriendly": "true",
+        "user" : {
+            "name": "Mary Galician",
+            "location": "Madrid",
+            "image": "https://tse2.mm.bing.net/th?id=OIP.4otX3R3krZFw67OCHdGAygHaJZ&pid=Api&P=0&w=121&h=154"
+        }
 
     },
 
@@ -147,7 +182,12 @@
             "watering": "It requires moisture, but be careful not to get waterlogged or its roots will rot. If it lacks irrigation, its leaves will tell you by turning yellowish."
         },
         "dificulty": "She practically takes care of herself.",
-        "petFriendly": "false"
+        "petFriendly": "false",
+        "user" : {
+            "name": "Mary Galician",
+            "location": "Madrid",
+            "image": "https://tse2.mm.bing.net/th?id=OIP.4otX3R3krZFw67OCHdGAygHaJZ&pid=Api&P=0&w=121&h=154"
+        }
 
     },
 
@@ -166,7 +206,12 @@
             "watering": "Moderate. Let the substrate dry between waterings."
         },
         "dificulty": "Not really difficult. I recommend you turning it from time to time so that it does not lose shape, but do it little by little so as not to disorient the plant.",
-        "petFriendly": "true"
+        "petFriendly": "true",
+        "user" : {
+            "name": "Mary Galician",
+            "location": "Madrid",
+            "image": "https://tse2.mm.bing.net/th?id=OIP.4otX3R3krZFw67OCHdGAygHaJZ&pid=Api&P=0&w=121&h=154"
+        }
 
     }
 
