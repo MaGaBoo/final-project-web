@@ -5,13 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import { CartContextProvider } from "./contexts/CartContext";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
     <AuthContextProvider>
-      <App />
+      <CartContextProvider>
+        <App />
+      </CartContextProvider>
     </AuthContextProvider>
   </BrowserRouter>
 );

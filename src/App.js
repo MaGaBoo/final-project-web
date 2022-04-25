@@ -14,6 +14,7 @@ import Orchids from './views/Categories/Orchids/Orchids';
 import CactusAndSucculents from './views/Categories/CactusAndSucculents/CactusAndSucculents';
 import { useAuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./guards/ProtectedRoute";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Cart />
 
       <div className="container">
         {!isAuthenticationFetched ? (

@@ -33,7 +33,7 @@ const Login = () => {
 
    loginRequest(data)
     .then((user) => {
-        console.log(user) // objeto con el token - ¿el token es el user?
+        // console.log(user) // objeto con el token - ¿el token es el user?
         login(user.access_token, () => navigate(from, { replace: true }))
     })
     .catch(err => {

@@ -1,22 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCartContext } from '../../../contexts/CartContext';
 import { getPlant } from '../../../services/PlantService';
 import './PlantDetail.scss';
 
 const PlantDetail = () => {
-  const [plant, setPlant] = useState({})
+  const [product, setProduct] = useState(null);
   const { id } = useParams();
+  const { addCart } = useCartContext();
 
   useEffect(() => {
     getPlant(id)
-      .then(plant => setPlant(plant))
+      .then(plant => setProduct(plant))
   },[id])
+
+  const addToCart = () => {
+    addCart(product)
+  }
 
   return (
     <>
       <h1>Plant detail</h1>
-      {plant && plant.plantCare &&
+      {product && product.plantCare &&
         <>
+<<<<<<< HEAD
         <p>Name: {plant.commonName}</p>
         <p>Scientific name: {plant.scientificName}</p>
         <p>Description: {plant.description}</p>
@@ -30,6 +37,21 @@ const PlantDetail = () => {
         <p>Difficulty: {plant.difficulty}</p>
         <p>Pet Friendly: {plant.petFriendly}</p>
         <p>Belongs to: {plant.user.name}</p>
+=======
+        <p>Name: {product.commonName}</p>
+        <p>Scientific name: {product.scientificName}</p>
+        <p>Description: {product.description}</p>
+        <p>Description: {product.category}</p>
+        <p>Height: {product.height}</p>
+        <img src={product.image} alt={product.commonName} />
+        <p>Price: {product.price}€</p>
+        <p>Temperature: {product.plantCare.temperature}</p>
+        <p>Light: {product.plantCare.light}</p>
+        <p>Watering: {product.plantCare.watering}</p>
+        <p>Difficulty: {product.difficulty}</p>
+        <p>Pet Friendly: {product.petFriendly}</p>
+        <button onClick={addToCart}>Add to cart</button>
+>>>>>>> adaac6b9054c9b4944d7a531744d505a7949eb4b
         </>
       }
     </>
