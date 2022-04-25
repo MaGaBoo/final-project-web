@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import plants from "../../data/plants.json";
 import './PlantList.scss';
 
-const PlantsList = () => {
+const PlantsList = ({ plants }) => {
 
   
   return (

@@ -29,6 +29,7 @@ const PlantDetail = () => {
         <p>Watering: {plant.plantCare.watering}</p>
         <p>Difficulty: {plant.difficulty}</p>
         <p>Pet Friendly: {plant.petFriendly}</p>
+        <p>Belongs to: {plant.user}</p>
         </>
       }
     </>
