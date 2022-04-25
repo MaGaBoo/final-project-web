@@ -23,21 +23,6 @@ const PlantDetail = () => {
       <h1>Plant detail</h1>
       {product && product.plantCare &&
         <>
-<<<<<<< HEAD
-        <p>Name: {plant.commonName}</p>
-        <p>Scientific name: {plant.scientificName}</p>
-        <p>Description: {plant.description}</p>
-        <p>Description: {plant.category}</p>
-        <p>Height: {plant.height}</p>
-        <img src={plant.image} alt={plant.commonName} />
-        <p>Price: {plant.price}€</p>
-        <p>Temperature: {plant.plantCare.temperature}</p>
-        <p>Light: {plant.plantCare.light}</p>
-        <p>Watering: {plant.plantCare.watering}</p>
-        <p>Difficulty: {plant.difficulty}</p>
-        <p>Pet Friendly: {plant.petFriendly}</p>
-        <p>Belongs to: {plant.user.name}</p>
-=======
         <p>Name: {product.commonName}</p>
         <p>Scientific name: {product.scientificName}</p>
         <p>Description: {product.description}</p>
@@ -50,8 +35,8 @@ const PlantDetail = () => {
         <p>Watering: {product.plantCare.watering}</p>
         <p>Difficulty: {product.difficulty}</p>
         <p>Pet Friendly: {product.petFriendly}</p>
+        <p>Owner: {product.user.name}</p>
         <button onClick={addToCart}>Add to cart</button>
->>>>>>> adaac6b9054c9b4944d7a531744d505a7949eb4b
         </>
       }
     </>
