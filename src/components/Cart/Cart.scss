@@ -1,0 +1,34 @@
+@import '../../assets/stylesheets/general_mixins.scss';
+@import '../../assets/stylesheets/variables.scss';
+
+.cart-item {
+  width: 250px;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+  background-color: $primary-color;
+
+  &__wrapper {
+    @include flex(flex, row, wrap, space-evenly, center);
+    border: solid 1px $primary-color;
+    padding: 10px;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    color: $white-color;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+    color: $white-color;
+  }
+
+  &__total {
+    color: $white-color
+  }
+
+  
+
+}
