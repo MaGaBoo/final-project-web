@@ -12,11 +12,13 @@ export const CartContextProvider = ({ children }) => {
 
   const addCart = useCallback((product) => {
     setCartItems([product, ...cartItems])
-  },[cartItems])
+  },[cartItems]);
+
+  const deleteProduct = (id) => setCartItems(cartItems.filter(product => product.id !== id))
 
   const value = useMemo(() => ({
-    cartItems, addCart
-  }),[cartItems, addCart])
+    cartItems, addCart, deleteProduct
+  }),[cartItems, addCart, deleteProduct])
 
   return (
     <CartContext.Provider value={value}>

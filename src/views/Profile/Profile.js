@@ -20,7 +20,7 @@ const Profile = () => {
       <h2>Plants:</h2>
       {user.plants.map(plant => {
         return (
-          <div>
+          <div key={plant.id}>
             <Link to={`/plant/${plant.id}`}>{plant.commonName}</Link>
             <button onClick={() => handleDelete(plant.id)}>Delete</button>
           </div>

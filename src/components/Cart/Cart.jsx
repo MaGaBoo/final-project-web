@@ -4,7 +4,7 @@ import './Cart.scss'
 
 
 const Cart = () => {
-  const { cartItems } = useCartContext();
+  const { cartItems, deleteProduct } = useCartContext();
   const { user } = useAuthContext();
 
   const totalCart = () => {
@@ -23,6 +23,7 @@ const Cart = () => {
           <div key={cartItem.id} className="cart-item__wrapper">
             <p className="cart-item__title"><strong>{cartItem.commonName}</strong></p>
             <p className="cart-item__price">{cartItem.price}€</p>
+            <button onClick={() => deleteProduct(cartItem.id)}>Delete</button>
           </div>
         )
       })}
