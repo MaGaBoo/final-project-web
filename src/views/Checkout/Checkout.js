@@ -20,6 +20,7 @@ const StripeForm = () => {
     getCurrentUser(userId).then((user) => setUser(user));
   }, [userId]);
 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
