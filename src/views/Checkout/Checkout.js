@@ -8,6 +8,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { payment, getCurrentUser } from "../../services/UsersService";
 import { useParams, useNavigate } from "react-router-dom";
+import { useCartContext } from "../../contexts/CartContext";
 
 const StripeForm = () => {
   const stripe = useStripe();
@@ -15,11 +16,12 @@ const StripeForm = () => {
   const [user, setUser] = useState();
   const { userId } = useParams();
   const navigate = useNavigate();
+  const { cartItems } = useCartContext();
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
-
-  }, []); 
+  }, [userId]); // en onlyhacks esto está vacío
+  console.log(user);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,7 +39,7 @@ const StripeForm = () => {
     } else if (paymentMethod) {
       const { id } = paymentMethod;
       payment({ amount: 1, subUserId: userId, payment: id }).then((result) => {
-        navigate("/orderConfirmation");
+        navigate("/orders");
       });
     }
   };
@@ -45,9 +47,17 @@ const StripeForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="my-4"></div>
+      {cartItems && cartItems.map(cartItem => {
+            return (
+              <div key={cartItem.id}>
+                <p><strong>{cartItem.commonName}</strong></p>
+                <p>{cartItem.price}€</p>
+              </div>
+            )
+          })}
       <CardElement />
       <button type="submit" disabled={!stripe || !elements}>
-        Shopping cart
+        Confirm order
       </button>
     </form>
   );
@@ -56,7 +66,7 @@ const StripeForm = () => {
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const CheckoutForm = () => (
-    <div className="d-flex text-center align-items-center flex-column justify-content-center">
+  <div className="d-flex text-center align-items-center flex-column justify-content-center">
     <Elements stripe={stripePromise}>
       <StripeForm />
     </Elements>
