@@ -1,12 +1,11 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { CartContextProvider } from "./contexts/CartContext";
 import "./index.scss";
-
 
 ReactDOM.render(
   <BrowserRouter>
@@ -16,7 +15,7 @@ ReactDOM.render(
       </CartContextProvider>
     </AuthContextProvider>
   </BrowserRouter>,
-    document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
