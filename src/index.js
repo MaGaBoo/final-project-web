@@ -1,22 +1,22 @@
-import "./index.scss";
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from 'react-dom';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { CartContextProvider } from "./contexts/CartContext";
-const container = document.getElementById("root");
-const root = createRoot(container);
+import "./index.scss";
 
-root.render(
+
+ReactDOM.render(
   <BrowserRouter>
     <AuthContextProvider>
       <CartContextProvider>
         <App />
       </CartContextProvider>
     </AuthContextProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
