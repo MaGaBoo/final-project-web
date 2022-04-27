@@ -15,13 +15,14 @@ const NewPlant = () => {
   const { user, getUser } = useAuthContext();
 
   const onSubmit = (data) => {
+
     const bodyFormData = new FormData()
     const { image, plantCare, ...rest } = data
 
     Object.keys(rest).forEach(key => {
       bodyFormData.append(key, rest[key])
     })
-
+    
     if ('temperature' in plantCare && 'light' in plantCare && 'watering' in plantCare) {
       bodyFormData.append('plantCare', JSON.stringify(plantCare))
     }
