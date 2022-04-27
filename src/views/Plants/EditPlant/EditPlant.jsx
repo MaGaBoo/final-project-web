@@ -19,29 +19,52 @@ const EditPlant = () => {
   useEffect(() => {
     getPlant(id)
       .then(plant => {
+        if (typeof (plant.plantCare) === 'string') {
+          plant.plantCare = JSON.parse(plant.plantCare)
+        }
         setPlant(plant) // probar destructuring
-        reset({ commonName: plant.commonName, scientificName: plant.description, description: plant.description, height: plant.height, image: plant.image, category: plant.category, price: plant.price, "plantCare.temperature": plant.plantCare.temperature, "plantCare.light": plant.plantCare.light, "plantCare.watering": plant.plantCare.watering, difficulty: plant.difficulty, petFriendly: plant.petFriendly })
+
+        reset({ commonName: plant.commonName, scientificName: plant.scientificName, description: plant.description, height: plant.height, image: plant.image, category: plant.category, price: plant.price, "plantCare.temperature": plant.plantCare.temperature, "plantCare.light": plant.plantCare.light, "plantCare.watering": plant.plantCare.watering, difficulty: plant.difficulty, petFriendly: plant.petFriendly })
       })
     }, [id, reset])
 
+  
+  plant && (console.log(plant.image))
+
   const onSubmit = (data) => {
+    const bodyFormData = new FormData()
+    const { image, plantCare, commonName, description, difficulty, height, petFriendly, price, scientificName, category } = data
 
-    const { commonName, scientificName, description, height, image, price, difficulty, petFriendly, category, plantCare } = data
-    const { temperature, light, watering } = data.plantCare
+    bodyFormData.append('commonName', commonName)
+    bodyFormData.append('description', description)
+    bodyFormData.append('difficulty', difficulty)
+    bodyFormData.append('height', height)
+    bodyFormData.append('petFriendly', petFriendly)
+    bodyFormData.append('price', price)
+    bodyFormData.append('scientificName', scientificName)
+       bodyFormData.append('category', category)
+    
+    if ('temperature' in plantCare && 'light' in plantCare && 'watering' in plantCare) {
+      bodyFormData.append('plantCare', JSON.stringify(plantCare))
+    }
 
-    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty || !category) {
+    if (image === plant.image) {
+      bodyFormData.append('image', image)
+    } else {
+      bodyFormData.append('image', image[0])
+    }
+
+    if (!data) {
       console.log('falta info para actualizar')
       setErrors(true)
     } else {
-      const updatedPlant = {commonName, scientificName, description, height, image, price, difficulty, petFriendly,category, plantCare}
-      updatePlant(plant.id, updatedPlant)
-        .then((plant) => {
-          getUser()
-          navigate('/profile')
-        })
+      updatePlant(plant.id, bodyFormData)
+      .then((plant) => {
+        getUser()
+        navigate('/profile')
+      })
         .catch(err => setErrors(err?.response?.data?.errors))
-        .finally(() => setIsSubmitting(false))
-    }
+    } 
   }
 
   return (
@@ -79,7 +102,7 @@ const EditPlant = () => {
         <InputGroup
           label="Image"
           id="image"
-          type="text"
+          type="file"
           register={register}
         />
 

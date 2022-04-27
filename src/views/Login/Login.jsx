@@ -26,8 +26,6 @@ const Login = () => {
   const { register, formState:{ errors }, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
-    console.log(data) // info del formulario
-
     setIsSubmitting(true);
     setError(undefined);
 

@@ -6,23 +6,33 @@ const CartContext = React.createContext();
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem(CART) || []));
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem(CART) || [])
+  );
 
-  const cartLocalStorage = localStorage.setItem(CART, JSON.stringify(cartItems));
+  const cartLocalStorage = localStorage.setItem(
+    CART,
+    JSON.stringify(cartItems)
+  );
 
-  const addCart = useCallback((product) => {
-    setCartItems([product, ...cartItems])
-  },[cartItems]);
+  const addCart = useCallback(
+    (product) => {
+      setCartItems([product, ...cartItems]);
+    },
+    [cartItems]
+  );
 
-  const deleteProduct = (id) => setCartItems(cartItems.filter(product => product.id !== id))
+  const deleteProduct = (id) =>
+    setCartItems(cartItems.filter((product) => product.id !== id));
 
-  const value = useMemo(() => ({
-    cartItems, addCart, deleteProduct
-  }),[cartItems, addCart, deleteProduct])
+  const value = useMemo(
+    () => ({
+      cartItems,
+      addCart,
+      deleteProduct,
+    }),
+    [cartItems, addCart, deleteProduct]
+  );
 
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  )
-}
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+};

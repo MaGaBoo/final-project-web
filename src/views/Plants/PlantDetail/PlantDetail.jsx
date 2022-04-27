@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useCartContext } from '../../../contexts/CartContext';
 import { getPlant } from '../../../services/PlantService';
 import './PlantDetail.scss';
@@ -11,7 +11,12 @@ const PlantDetail = () => {
 
   useEffect(() => {
     getPlant(id)
-      .then(plant => setProduct(plant))
+      .then(plant => {
+        if (typeof (plant.plantCare) === 'string') {
+          plant.plantCare = JSON.parse(plant.plantCare)
+        }
+        setProduct(plant)
+      })
   },[id])
 
   const addToCart = () => {
@@ -26,7 +31,7 @@ const PlantDetail = () => {
         <p>Name: {product.commonName}</p>
         <p>Scientific name: {product.scientificName}</p>
         <p>Description: {product.description}</p>
-        <p>Description: {product.category}</p>
+        <p>Category: {product.category}</p>
         <p>Height: {product.height}</p>
         <img src={product.image} alt={product.commonName} />
         <p>Price: {product.price}€</p>
@@ -34,8 +39,9 @@ const PlantDetail = () => {
         <p>Light: {product.plantCare.light}</p>
         <p>Watering: {product.plantCare.watering}</p>
         <p>Difficulty: {product.difficulty}</p>
-        <p>Pet Friendly: {product.petFriendly}</p>
+        <p>Pet Friendly: {product.petFriendly ? 'Yes' : 'No'}</p>
         <p>Owner: {product.user.name}</p>
+        <Link to={`/plant/${product.id}/edit`}>Edit plant</Link>
         <button onClick={addToCart}>Add to cart</button>
         </>
       }
