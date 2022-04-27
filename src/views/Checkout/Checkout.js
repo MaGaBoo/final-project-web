@@ -18,7 +18,11 @@ const StripeForm = () => {
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
+<<<<<<< HEAD
   }, [userId]);
+=======
+  }, []);
+>>>>>>> 95595a257508ef3a58dc36b187f1305cd8714349
 
   const handleSubmit = async (event) => {
     event.preventDefault();

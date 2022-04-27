@@ -1,11 +1,11 @@
-import InputGroup from '../../../components/InputGroup/InputGroup';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { createPlant } from '../../../services/PlantService';
-import './NewPlant.scss';
 import { useNavigate } from 'react-router';
 import { useAuthContext } from '../../../contexts/AuthContext';
+import InputGroup from '../../../components/InputGroup/InputGroup';
 import DropDownGroup from '../../../components/DropDownGroup/DropDownGroup';
+import './NewPlant.scss';
 
 const NewPlant = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -15,22 +15,35 @@ const NewPlant = () => {
   const { user, getUser } = useAuthContext();
 
   const onSubmit = (data) => {
-    console.log(data)
-    const { commonName, scientificName, description, height, image, price, difficulty, petFriendly } = data
-    const { temperature, light, watering } = data.plantCare
 
+    const bodyFormData = new FormData()
+    const { image, plantCare, ...rest } = data
 
-    if (!commonName || !description || !height || !image || !price || !temperature || !light || !watering || !difficulty) {
+    Object.keys(rest).forEach(key => {
+      bodyFormData.append(key, rest[key])
+    })
+    
+    if ('temperature' in plantCare && 'light' in plantCare && 'watering' in plantCare) {
+      bodyFormData.append('plantCare', JSON.stringify(plantCare))
+    }
+
+    if (image[0]) {
+      bodyFormData.append('image', image[0])
+    }
+
+    bodyFormData.append('user', user.id)
+
+    if (!data) {
       console.log('pa tu casa')
       setErrors(true)
     } else {
-      createPlant({...data, user})
+      createPlant(bodyFormData)
       .then((plant) => {
         getUser()
         navigate('/profile')
       })
         .catch(err => setErrors(err?.response?.data?.errors))
-    }
+    } 
   }
 
   return (
@@ -70,7 +83,7 @@ const NewPlant = () => {
         <InputGroup
           label="Image:"
           id="image"
-          type="text"
+          type="file"
           register={register}
         />
 
