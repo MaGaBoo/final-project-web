@@ -2,4 +2,4 @@ import createHttp from './BaseService';
 
 const http = createHttp(true);
 
-export const createOrder = (data) => http.post('/checkout', data)
+export const getOrder = (id) => http.get(`/order/${id}`)

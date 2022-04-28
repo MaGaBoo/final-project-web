@@ -46,10 +46,10 @@ function App() {
               <Route path="plant/:id/edit" element={<EditPlant />} />
               <Route path="plant/:id" element={<PlantDetail />} />
               <Route path="shoppingCart" element={<CheckoutForm />} /> 
+              <Route path="order/:id" element={<Orders />} />
             </Route>
           </Routes>
 
-          //No estoy segura al 100% del path="shoppingCart"...
         )}
       </div>
     <Footer/>
