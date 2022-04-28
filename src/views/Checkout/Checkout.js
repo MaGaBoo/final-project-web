@@ -10,6 +10,7 @@ import { payment, getCurrentUser } from "../../services/UsersService";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCartContext } from "../../contexts/CartContext";
 
+
 const StripeForm = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -18,6 +19,7 @@ const StripeForm = () => {
   const navigate = useNavigate();
   const { cartItems } = useCartContext();
   
+  /* const { algo } = data */ //esto es lo que voy a pasar al back por el OrdersService
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
@@ -28,7 +30,6 @@ const StripeForm = () => {
       return acc + product.price;
     }, 0);
   };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
