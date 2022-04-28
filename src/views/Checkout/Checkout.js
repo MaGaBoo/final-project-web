@@ -17,11 +17,18 @@ const StripeForm = () => {
   const { userId } = useParams();
   const navigate = useNavigate();
   const { cartItems } = useCartContext();
+  
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
   }, [userId]); // en onlyhacks esto está vacío
-  console.log(user);
+  
+  const totalCart = () => {
+    return cartItems.reduce((acc, product) => {
+      return acc + product.price;
+    }, 0);
+  };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,24 +44,30 @@ const StripeForm = () => {
 
     if (error) {
     } else if (paymentMethod) {
+     console.log('hola')
       const { id } = paymentMethod;
-      payment({ amount: 1, subUserId: userId, payment: id }).then((result) => {
-        navigate("/orders");
-      });
+      payment({ amount: totalCart(), paymentId: id, user: user.id, targetUser: '62696d80293a3b49a8eedb79', items: cartItems, paymentType: 'card' })
+        .then((result) => {
+          navigate('/orders')
+        });
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="my-4"></div>
-      {cartItems && cartItems.map(cartItem => {
-            return (
-              <div key={cartItem.id}>
-                <p><strong>{cartItem.commonName}</strong></p>
-                <p>{cartItem.price}€</p>
-              </div>
-            )
-          })}
+      {cartItems &&
+        cartItems.map((cartItem) => {
+          return (
+            <div key={cartItem.id}>
+              <p>
+                <strong>{cartItem.commonName}</strong>
+              </p>
+              <p>{cartItem.price}€</p>
+            </div>
+          );
+        })}
+      <h2>Total: {totalCart()}€</h2>
       <CardElement />
       <button type="submit" disabled={!stripe || !elements}>
         Confirm order
