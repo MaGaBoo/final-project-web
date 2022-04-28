@@ -46,7 +46,7 @@ const StripeForm = () => {
     } else if (paymentMethod) {
      console.log('hola')
       const { id } = paymentMethod;
-      payment({ amount: totalCart(), paymentId: id, user: user.id, targetUser: '62696d80293a3b49a8eedb79', items: cartItems, paymentType: 'card' })
+      payment({ amount: totalCart(), paymentId: id, user: user.id, items: cartItems, paymentType: 'card' })
         .then((result) => {
           navigate('/orders')
         });
