@@ -1,15 +1,20 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { useAuthContext } from "../../contexts/AuthContext";
-import { createOrder } from "../../services/OrdersService";
+import { createOrder, getOrder } from "../../services/OrdersService";
 
 const Orders = () => {
   const { user, getUser } = useAuthContext();
+  const [order, setOrder] = useState();
+  const { id } = useParams();
 
-  const newOrder = () => createOrder()
-  .then((orderCreated) => {
-      getUser(orderCreated)
-     // aquí aún no estoy trayendo nada que se pueda mapear
-  })
- 
+  useEffect(() => {
+    getOrder(id)
+    .then((order) => {
+      setOrder(order)
+    })
+  }, [id])
+
   return (
     <>
       <div className="container" />
@@ -18,15 +23,12 @@ const Orders = () => {
 
       <div>
    <h3>Your current orders:</h3>
-   {newOrder} {console.log('llegamos aquí', newOrder)}
-
-   {/* {user.newOrder.map(order => {
-        return (
-          <div key={order.id}>
-        {order.id} //para ver que llega algo
-          </div>
-        )
-      })} */}
+   {order && order.items.map(item => {
+     return(
+       <h3>{item.commonName}</h3>
+     )
+   })}
+  
       </div>
       
 
