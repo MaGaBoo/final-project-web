@@ -21,6 +21,7 @@ const Navbar = () => {
           
             <Link to="/profile">Profile</Link>
             <Link to="/plant/new">Create plant</Link>
+            <Link to="/orders">Orders</Link>
             <Link to="/shoppingCart">Checkout</Link>
             <button onClick={logout}>Logout</button>
           </>

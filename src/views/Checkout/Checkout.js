@@ -18,8 +18,6 @@ const StripeForm = () => {
   const { userId } = useParams();
   const navigate = useNavigate();
   const { cartItems } = useCartContext();
-  
-  /* const { algo } = data */ //esto es lo que voy a pasar al back por el OrdersService
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
@@ -45,7 +43,6 @@ const StripeForm = () => {
 
     if (error) {
     } else if (paymentMethod) {
-     console.log('hola')
       const { id } = paymentMethod;
       payment({ amount: totalCart(), paymentId: id, user: user.id, items: cartItems, paymentType: 'card' })
         .then((result) => {
