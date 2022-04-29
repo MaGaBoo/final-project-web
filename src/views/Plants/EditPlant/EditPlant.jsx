@@ -28,8 +28,6 @@ const EditPlant = () => {
       })
     }, [id, reset])
 
-  
-  plant && (console.log(plant.image))
 
   const onSubmit = (data) => {
     const bodyFormData = new FormData()
