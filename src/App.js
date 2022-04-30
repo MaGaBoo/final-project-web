@@ -42,7 +42,7 @@ function App() {
 
             <Route path="/" element={<ProtectedRoute />}>
               <Route path="profile" element={<Profile />} />
-              <Route path="orders" element={<Orders />} />
+{/*               <Route path="orders" element={<Orders />} /> */}
               <Route path="plant/new" element={<NewPlant />} />
               <Route path="plant/:id/edit" element={<EditPlant />} />
               <Route path="plant/:id" element={<PlantDetail />} />
