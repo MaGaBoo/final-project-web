@@ -17,7 +17,7 @@ const StripeForm = () => {
   const [user, setUser] = useState();
   const { userId } = useParams();
   const navigate = useNavigate();
-  const { cartItems } = useCartContext();
+  const { cartItems, deleteProduct } = useCartContext();
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
@@ -63,6 +63,7 @@ const StripeForm = () => {
                 <strong>{cartItem.commonName}</strong>
               </p>
               <p>{cartItem.price}€</p>
+              <i onClick={() => deleteProduct(cartItem.id)} className="fa-solid fa-trash"></i>
             </div>
           );
         })}
