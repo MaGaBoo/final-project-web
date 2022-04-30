@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { filterPlants } from "../../../services/PlantService";
+import { filterEvergreen } from "../../../services/PlantService";
 import PlantsList from "../../../components/PlantsList/PlantList";
 import "./Evergreen.scss";
 
@@ -7,12 +7,12 @@ const Evergreen = () => {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    filterPlants().then((plants) => setPlants(plants));
+    filterEvergreen().then((plants) => setPlants(plants));
   }, []);
 
   return (
     <div>
-      <h1>My fucking plants</h1>
+    <h1>Evergreen plants</h1>
       <PlantsList plants={plants} />
     </div>
   );
