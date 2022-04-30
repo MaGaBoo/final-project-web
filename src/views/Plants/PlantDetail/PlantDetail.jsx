@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useAuthContext } from '../../../contexts/AuthContext';
 import { useCartContext } from '../../../contexts/CartContext';
 import { getPlant } from '../../../services/PlantService';
+import { getCurrentUser } from '../../../services/UsersService';
 import './PlantDetail.scss';
 
 const PlantDetail = () => {
   const [product, setProduct] = useState(null);
+  const [buy, setBuy] = useState(true);
   const { id } = useParams();
-  const { addCart } = useCartContext();
+  const { addCart, cartItems } = useCartContext();
+  const { user, getUser } = useAuthContext();
 
   useEffect(() => {
     getPlant(id)
@@ -19,9 +23,19 @@ const PlantDetail = () => {
       })
   },[id])
 
+
   const addToCart = () => {
-    addCart(product)
+    if (!cartItems.includes(product)) {
+      addCart(product)
+      setBuy(false)
+      console.log('Ya tienes este producto en tu carrito')
+    }
   }
+
+/*   useEffect(() => {
+      cartItems && cartItems.map(item => console.log(item.id))
+  })
+ */
 
   return (
     <>
@@ -42,9 +56,15 @@ const PlantDetail = () => {
         <p>Pet Friendly: {product.petFriendly ? 'Yes' : 'No'}</p>
         <p>Owner: {product.user.name}</p>
         <Link to={`/plant/${product.id}/edit`}>Edit plant</Link>
-        <button onClick={addToCart}>Add to cart</button>
         </>
       }
+
+      {!user ? <p>You have to log in to buy this product</p> :
+        <>
+          {user && buy ? <button onClick={addToCart}>Add to cart</button> : <p>You already have this product in your cart</p> }
+        </>
+      }
+
     </>
   )
 }

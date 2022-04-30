@@ -15,7 +15,6 @@ import CactusAndSucculents from './views/Categories/CactusAndSucculents/CactusAn
 import { useAuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./guards/ProtectedRoute";
 import CheckoutForm from "./views/Checkout/Checkout";
-import Orders from "./views/Orders/Orders";
 import Cart from "./components/Cart/Cart";
 import OrderDetail from "./views/Orders/OrderDetail/OrderDetail";
 
@@ -38,14 +37,14 @@ function App() {
             <Route path="/evergreen" element={<Evergreen />} />
             <Route path="/orchids" element={<Orchids />} />
             <Route path="/cactus-and-succulents" element={<CactusAndSucculents />} />
+            <Route path="plant/:id" element={<PlantDetail />} />
 
 
             <Route path="/" element={<ProtectedRoute />}>
               <Route path="profile" element={<Profile />} />
-{/*               <Route path="orders" element={<Orders />} /> */}
+              {/* <Route path="orders" element={<Orders />} /> */}
               <Route path="plant/new" element={<NewPlant />} />
               <Route path="plant/:id/edit" element={<EditPlant />} />
-              <Route path="plant/:id" element={<PlantDetail />} />
               <Route path="shoppingCart" element={<CheckoutForm />} /> 
               <Route path="order/:id" element={<OrderDetail />} />
             </Route>
