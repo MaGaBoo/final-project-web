@@ -11,13 +11,23 @@ const OrderDetail = () => {
       .then(order => setOrder(order))
   },[id])
 
+  console.log(order)
+
   return (
     <>
-      {order && order.items.map((item) => {
-        return (
-          <p key={item.id}>{item.commonName}</p>
-        )
-      })}
+      <p>Products:</p>
+
+      <ul>
+        {order && order.items.map(item => <li key={item.id}>{item.commonName} - {item.price}€</li>)}
+      </ul>
+      
+      
+      {order && (
+        <>
+          <p>Total: {order.totalCart}€</p>
+          <p>Date: {order.updatedAt.slice(0, 10)}</p>
+        </>
+      )}
     </>
   )
 }
