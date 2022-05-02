@@ -1,0 +1,32 @@
+@import '../../assets//stylesheets/general_mixins.scss';
+
+.product-headline {
+    font-family: $main-font;
+    background-color: $third-color;
+    @include flex(flex, flex-start, wrap, space-between, align);
+    padding: 1.5rem
+}
+
+.product {
+    background-color: $white-color;
+    font-family: $main-font;
+    @include flex(flex, flex-start, wrap, space-between, align);
+    padding: 3rem
+}
+
+.product-image {
+    float: left;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover
+}
+//había una forma de redimensionar todas las imágenes al mismo tamaño?
+
+.order {
+    @include btn($secondary-color, $white-color)
+}
+
+.total {
+    font-family: $main-font;
+    @include flex(flex, row, wrap, flex-end, align);
+}
