@@ -7,6 +7,7 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem(CART)) || []);
+  const [buy, setBuy] = useState(true);
 
   const cartLocalStorage = localStorage.setItem(CART, JSON.stringify(cartItems));
 
@@ -15,6 +16,12 @@ export const CartContextProvider = ({ children }) => {
       setCartItems([product, ...cartItems]);
     },[cartItems]);
 
+/*     const buyNoMore = useCallback(
+      () => {
+        setBuy(false)
+      }, []
+    )
+ */
   const deleteProduct = (id) => setCartItems(cartItems.filter((product) => product.id !== id));
 
   const value = useMemo(
@@ -22,6 +29,7 @@ export const CartContextProvider = ({ children }) => {
       cartItems,
       addCart,
       deleteProduct,
+
     }),
     [cartItems, addCart, deleteProduct]
   );

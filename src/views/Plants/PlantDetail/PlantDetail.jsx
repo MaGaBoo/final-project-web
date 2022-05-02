@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import { useCartContext } from '../../../contexts/CartContext';
 import { getPlant } from '../../../services/PlantService';
-import { getCurrentUser } from '../../../services/UsersService';
+
 import './PlantDetail.scss';
 
 const PlantDetail = () => {
@@ -28,9 +28,9 @@ const PlantDetail = () => {
     if (!cartItems.includes(product)) {
       addCart(product)
       setBuy(false)
-      console.log('Ya tienes este producto en tu carrito')
     }
   }
+
 
 /*   useEffect(() => {
       cartItems && cartItems.map(item => console.log(item.id))
@@ -61,7 +61,7 @@ const PlantDetail = () => {
 
       {!user ? <p>You have to log in to buy this product</p> :
         <>
-          {user && buy ? <button onClick={addToCart}>Add to cart</button> : <p>You already have this product in your cart</p> }
+          {user && buy ? <button onClick={addToCart}>Add to cart</button> : <p>✅ You have adopted this plant!</p> }
         </>
       }
 
