@@ -8,8 +8,8 @@
   box-sizing: border-box
 }
 
-@mixin flex($dis, $direction, $wrap, $justify, $align) {
-  display: $dis;
+@mixin flex($display, $direction, $wrap, $justify, $align) {
+  display: $display;
   flex-flow: $direction $wrap;
   justify-content: $justify;
   align-items: $align;
@@ -24,7 +24,7 @@
   padding: 5px 10px;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -37,7 +37,7 @@
   padding: 5px 10px;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
   cursor: pointer
 }
@@ -54,11 +54,9 @@ html {
 
 body {
   font-size: 1.8rem;
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000;
 }
 
 .wrapper {

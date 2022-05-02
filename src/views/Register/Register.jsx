@@ -10,8 +10,9 @@ import './Register.scss';
 
 const schema = yup.object({
   name: yup.string().required(),
-  location: yup.string(),
+  location: yup.string().required(),
   email: yup.string().email().required(),
+  address: yup.string().required(),
   password: yup.string().min(8, 'Provide at least 8 characters').required(),
 }).required();
 
@@ -23,7 +24,6 @@ const Register = () => {
   const navigate = useNavigate()
 
   const onSubmit = (data) => {
-
     setBackErrors({});
     setIsSubmitting(true);
 
@@ -60,6 +60,14 @@ return (
         register={register}
         error={backErrors?.location || errors.location?.message}
         />
+
+        <InputGroup
+        label="Address"
+        id="address"
+        type="text"
+        register={register}
+        error={backErrors.address || errors.address?.message}
+        />
         
         <InputGroup
         label="Email:"
@@ -77,7 +85,7 @@ return (
         error={backErrors?.password || errors.password?.message}
         />
         
-        <button>{isSubmitting ? 'Submiting...' : 'Submit'}</button>
+        <button className="register-btn">{isSubmitting ? 'Submiting...' : 'Submit'}</button>
 
       </form>
     </>

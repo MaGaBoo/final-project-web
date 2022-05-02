@@ -47,7 +47,7 @@ const StripeForm = () => {
       payment({ amount: totalCart(), paymentId: id, user: user.id, items: cartItems, paymentType: 'card' })
         .then((result) => {
           localStorage.setItem('cart', JSON.stringify([]))
-          navigate('/orders')
+          navigate('/profile')
         });
     }
   };
