@@ -1,0 +1,12 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+
+.register-btn {
+  @include btn($secondary-color, $white-color);
+  font-family: $secondary-font;
+
+  &:hover {
+    @include btn($main-color, $white-color);
+  }
+}
