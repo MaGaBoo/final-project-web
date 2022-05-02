@@ -85,7 +85,7 @@ return (
         error={backErrors?.password || errors.password?.message}
         />
         
-        <button>{isSubmitting ? 'Submiting...' : 'Submit'}</button>
+        <button className="register-btn">{isSubmitting ? 'Submiting...' : 'Submit'}</button>
 
       </form>
     </>
