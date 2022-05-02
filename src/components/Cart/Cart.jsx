@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useCartContext } from "../../contexts/CartContext";
+import { Link } from 'react-router-dom';
 import './Cart.scss'
 
 
@@ -30,6 +31,8 @@ const Cart = () => {
           })}
           <h2 className='cart-item__total'>Total: {totalCart()}€</h2>
           <i className="fa-solid fa-cart-shopping">{cartItems.length}</i>
+          <br/>
+          <Link to={'/shoppingCart'} className='cart-item__link'>Finalizar compra</Link>
 
         </div>
       )}
