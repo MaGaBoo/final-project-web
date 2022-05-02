@@ -61,7 +61,7 @@ const PlantDetail = () => {
 
       {!user ? <p>You have to log in to buy this product</p> :
         <>
-          {user && buy ? <button onClick={addToCart}>Add to cart</button> : <p>You already have this product in your cart</p> }
+          {user && buy ? <button onClick={addToCart}>Add to cart</button> : <p>You have adopted this plant!</p> }
         </>
       }
 
