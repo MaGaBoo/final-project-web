@@ -1,0 +1,11 @@
+@import "/src/assets/stylesheets/general_mixins.scss";
+@import "/src/assets/stylesheets/variables.scss";
+
+.container {
+    @include flex(flex, row, wrap, justify, align);
+
+    .image {
+        width: 200px;
+    }
+ 
+}
