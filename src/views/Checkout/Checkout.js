@@ -58,21 +58,30 @@ const StripeForm = () => {
   };
 
   return (
-    <>
+    <div className="wrapper">
       <div className="product-headline">
-        <h3>Product</h3>
-        <h3>Price</h3>
+        <div className="product-left">
+          <h3>Product</h3>
+        </div>
+
+        <div className="product-right">     
+          <h3>Price</h3>
+        </div>
+
       </div>
       <form onSubmit={handleSubmit}>
         {cartItems &&
           cartItems.map((cartItem) => {
             return (
               <div className="product" key={cartItem.id}>
-                <img
-                  className="product-image"
-                  src={cartItem.image}
-                  alt={cartItem.commonName}
-                />
+                <div className="product-capture">
+                  <img
+                    className="product-image"
+                    src={cartItem.image}
+                    alt={cartItem.commonName}
+                  />
+                </div>
+
                 <div className="product-text">
                   <p>
                     <strong>{cartItem.commonName}</strong>
@@ -84,7 +93,10 @@ const StripeForm = () => {
                     Remove
                   </p>
                 </div>
-                <p>{cartItem.price}€</p>
+
+                <div className="product-price">
+                  <p>{cartItem.price}€</p>
+                </div>
               </div>
             );
           })}
@@ -102,14 +114,14 @@ const StripeForm = () => {
         <button className="checkout" type="submit" disabled={!stripe || !elements}>
           Checkout
         </button>
-    </>
+    </div>
   );
 };
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const CheckoutForm = () => (
-  <div className="d-flex text-center align-items-center flex-column justify-content-center">
+  <div>
     <Elements stripe={stripePromise}>
       <StripeForm />
     </Elements>

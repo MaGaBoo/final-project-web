@@ -4,10 +4,22 @@
 .product-headline {
   font-family: $main-font;
   background-color: $third-color;
-  @include flex(flex, flex-start, wrap, space-between, align);
+  @include flex(flex, flex-start, wrap, space-between, center);
   font-size: 1.5rem;
   padding: 1.5rem;
+
+  .product-left {
+    width: 30%;
+    text-align: left;
+  }
+
+  .product-right {
+    width: 70%;
+    text-align: right;
+  }
 }
+
+
 .product {
   background-color: $white-color;
   font-family: $main-font;
@@ -19,18 +31,30 @@
 
   .product-image {
     float: left;
-    width: 4rem;
-    height: 4rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: cover;
   }
   .product-text {
       @include flex(flex, column, wrap, flex-start, start);
+      width: 50%;
+      text-align: center;
   }
+
   .remove {
       color: $main-color;
       text-decoration: underline;
       font-size: 1.2rem;
     }
+
+  .product-capture {
+    width: 30%;
+  }
+
+  .product-price {
+    width: 20%;
+    text-align: right;
+  }
 }
 
 .card {
@@ -39,8 +63,9 @@
 }
 
 .checkout {
-  @include btn($secondary-color, $white-color);
-  @include flex(flex, row, wrap, flex-end, align)
+  text-align: right !important;
+   @include btn($secondary-color, $white-color);
+  /*@include flex(flex, row, wrap, flex-end, align) */
 }
 
 .total {
