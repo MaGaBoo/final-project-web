@@ -2,10 +2,23 @@
 @import "/src/assets/stylesheets/variables.scss";
 
 .container {
-    @include flex(flex, row, wrap, justify, align);
-
-    .image {
-        width: 200px;
+    @include flex(flex, row, nowrap, justify, align);
+    padding: 3rem;
+    .name {
+        font-family: $main-font;
+        font-size: 2rem;
+        font-weight: 800;
     }
- 
+    .product-info {
+        justify-content: flex-start;
+    }
+    .image {
+       width: 300px;
+       height: auto;
+       object-fit: contain;
+    }
+}
+
+.add-button {
+    @include btn($secondary-color, $white-color)
 }

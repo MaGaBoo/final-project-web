@@ -46,12 +46,12 @@ const PlantDetail = () => {
           <div className="container">
             <img className="image" src={product.image} alt={product.commonName} />
             <div className="product-info">
-              <p>Name: {product.commonName}</p>
+              <p className="name">{product.commonName}</p>
+              <p>Price: {product.price}€</p>
               <p>Scientific name: {product.scientificName}</p>
               <p>Description: {product.description}</p>
               <p>Category: {product.category}</p>
               <p>Height: {product.height}</p>
-              <p>Price: {product.price}€</p>
               <p>Temperature: {product.plantCare.temperature}</p>
               <p>Light: {product.plantCare.light}</p>
               <p>Watering: {product.plantCare.watering}</p>
@@ -59,20 +59,23 @@ const PlantDetail = () => {
               <p>Pet Friendly: {product.petFriendly ? "Yes" : "No"}</p>
               <p>Owner: {product.user.name}</p>
               <Link to={`/plant/${product.id}/edit`}>Edit plant</Link>
+              <br />
+              <br />
+              {!user ? (
+                <p>You have to log in to buy this product</p>
+              ) : (
+                <>
+                  {user && buy ? (
+                    <button className="add-button" onClick={addToCart}>
+                      Add to cart
+                    </button>
+                  ) : (
+                    <p>✅ You have adopted this plant!</p>
+                  )}
+                </>
+              )}
             </div>
           </div>
-        </>
-      )}
-
-      {!user ? (
-        <p>You have to log in to buy this product</p>
-      ) : (
-        <>
-          {user && buy ? (
-            <button onClick={addToCart}>Add to cart</button>
-          ) : (
-            <p>✅ You have adopted this plant!</p>
-          )}
         </>
       )}
     </>
