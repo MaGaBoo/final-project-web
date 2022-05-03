@@ -1,9 +1,21 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
 .footer{
-    margin-top: 1rem;
-    padding: 0.1rem;
-    background-color: rgba(204, 253, 220, 0.489);
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+  @include flex(flex, row, wrap, center, center);
+  padding: 10px ;
+  background-color: $black-color;
+  color: #8a8a8a;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.6rem;
+
+  &__left {
+    width: 50%;
   }
+
+  &__right {
+    width: 50%;
+  }
+}

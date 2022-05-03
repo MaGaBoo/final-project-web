@@ -1,0 +1,15 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+
+.condition {
+  width: 25%;
+
+  &__circle {
+    width: 75px;
+    height: 75px;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+}

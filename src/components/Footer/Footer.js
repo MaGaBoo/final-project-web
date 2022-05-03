@@ -3,7 +3,12 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <h3>Aquí hay un footer</h3>
+        <div className="footer__left">
+          <p>©2022 Oh My Plants</p>
+        </div>
+        <div className="footer__right">
+          <p>Made by Robert Cabrera y María Gallego</p>
+        </div>    
     </div>
   );
 };
