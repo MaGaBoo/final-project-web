@@ -29,13 +29,18 @@ const PlantDetail = () => {
     }
   };
 
-  /*   useEffect(() => {
-      cartItems && cartItems.map(item => console.log(item.id))
-  })
- */
+  useEffect(() => {
+    product && cartItems && cartItems.find(item => {
+      if (item.id === product.id) {
+        setBuy(false)
+      }
+    })
+  }, [product, cartItems])
+
 
   return (
     <>
+      <h1>Plant detail</h1>
       {product && product.plantCare && (
         <>
           <div className="container">
