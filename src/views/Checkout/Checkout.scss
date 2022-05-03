@@ -6,14 +6,13 @@
   @include flex(flex, flex-start, wrap, space-between, align);
   padding: 1.5rem;
 
-  .product {
-    background-color: $white-color;
-    font-family: $main-font;
-    @include flex(flex, flex-start, wrap, space-between, align);
-    padding: 3rem;
-  }
 }
-
+.product {
+  background-color: $white-color;
+  font-family: $main-font;
+  @include flex(flex, flex-start, wrap, space-between, align);
+  padding: 3rem;
+}
 .product-image {
   float: left;
   width: 4rem;
