@@ -59,33 +59,49 @@ const StripeForm = () => {
 
   return (
     <>
-    <div className="product-headline">
-      <h3>Product</h3>
-      <h3>Price</h3>
+      <div className="product-headline">
+        <h3>Product</h3>
+        <h3>Price</h3>
       </div>
       <form onSubmit={handleSubmit}>
         {cartItems &&
           cartItems.map((cartItem) => {
             return (
               <div className="product" key={cartItem.id}>
-              <img className="product-image" src={cartItem.image} alt={cartItem.commonName} />
-                <p>
-                  <strong>{cartItem.commonName}</strong>
-                </p>
+                <img
+                  className="product-image"
+                  src={cartItem.image}
+                  alt={cartItem.commonName}
+                />
+                <div className="product-text">
+                  <p>
+                    <strong>{cartItem.commonName}</strong>
+                  </p>
+                  <p
+                    onClick={() => deleteProduct(cartItem.id)}
+                    className="remove"
+                  >
+                    Remove
+                  </p>
+                </div>
                 <p>{cartItem.price}€</p>
-                <i
-                  onClick={() => deleteProduct(cartItem.id)}
-                  className="fa-solid fa-trash"
-                ></i>
               </div>
             );
           })}
         <h2 className="total">Total: {totalCart()}€</h2>
-        <CardElement />
-        <button className="order" type="submit" disabled={!stripe || !elements}>
-          Confirm order
-        </button>
+        <br/>
+        <br/>
+        <br/>
+      <div className="product-headline">
+        <h3>Payment Method</h3>
+      </div>
+      <br/>
+        <CardElement className="card" />
       </form>
+      <br/>
+        <button className="checkout" type="submit" disabled={!stripe || !elements}>
+          Checkout
+        </button>
     </>
   );
 };

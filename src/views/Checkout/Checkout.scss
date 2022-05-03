@@ -1,29 +1,46 @@
-@import "../../assets//stylesheets/general_mixins.scss";
+@import "/src/assets/stylesheets/general_mixins.scss";
+@import "/src/assets/stylesheets/variables.scss";
 
 .product-headline {
   font-family: $main-font;
   background-color: $third-color;
   @include flex(flex, flex-start, wrap, space-between, align);
+  font-size: 1.5rem;
   padding: 1.5rem;
-
 }
 .product {
   background-color: $white-color;
   font-family: $main-font;
+  font-weight: 900;
+  font-size: 1.8rem;
   @include flex(flex, flex-start, wrap, space-between, align);
   padding: 3rem;
-}
-.product-image {
-  float: left;
-  width: 4rem;
-  height: 4rem;
-  object-fit: cover;
+  border-bottom: 0.8px solid $grey-color;
+
+  .product-image {
+    float: left;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+  }
+  .product-text {
+      @include flex(flex, column, wrap, flex-start, start);
+  }
+  .remove {
+      color: $main-color;
+      text-decoration: underline;
+      font-size: 1.2rem;
+    }
 }
 
-//había una forma de redimensionar todas las imágenes al mismo tamaño?
+.card {
+    padding: 0.8rem;
+    border: 0.5px solid $grey-color
+}
 
-.order {
+.checkout {
   @include btn($secondary-color, $white-color);
+  @include flex(flex, row, wrap, flex-end, align)
 }
 
 .total {
