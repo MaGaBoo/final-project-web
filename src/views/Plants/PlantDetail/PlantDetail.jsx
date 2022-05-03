@@ -40,7 +40,6 @@ const PlantDetail = () => {
 
   return (
     <>
-      <h1>Plant detail</h1>
       {product && product.plantCare && (
         <>
           <div className="container">
