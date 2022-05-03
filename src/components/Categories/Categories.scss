@@ -1,0 +1,18 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.category {
+  height: 500px;
+  width: 30%;
+  padding: 0 25px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  text-decoration: none;
+
+  &__title {
+    padding-top: 25px;
+    color: $black-color;
+  }
+}
