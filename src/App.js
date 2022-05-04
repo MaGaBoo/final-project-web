@@ -17,6 +17,7 @@ import ProtectedRoute from "./guards/ProtectedRoute";
 import CheckoutForm from "./views/Checkout/Checkout";
 import Cart from "./components/Cart/Cart";
 import OrderDetail from "./views/Orders/OrderDetail/OrderDetail";
+import Shop from "./views/Shop/Shop";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -38,6 +39,7 @@ function App() {
             <Route path="/orchids" element={<Orchids />} />
             <Route path="/cactus-and-succulents" element={<CactusAndSucculents />} />
             <Route path="plant/:id" element={<PlantDetail />} />
+            <Route path="/shop" element={<Shop />} />
 
 
             <Route path="/" element={<ProtectedRoute />}>

@@ -18,7 +18,7 @@ const Home = () => {
   
   useEffect(() => {
     listPlants()
-      .then(plants => setPlants(plants))
+      .then(plants => setPlants(plants.filter((plant, index) => index < 8)))
   }, [])
 
   return (
@@ -102,6 +102,8 @@ const Home = () => {
         <div className="products__single">
           <PlantsList plants={plants}/>
         </div>
+
+        <Link to="/shop" className="products__btn">View all plants</Link>
       </div>
 
 

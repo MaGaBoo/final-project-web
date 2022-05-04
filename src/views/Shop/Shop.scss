@@ -1,0 +1,8 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.shop {
+  @include flex(flex, row, wrap, flex-start, flex-start);
+  margin-top: 5rem;
+  padding: 5rem 0;
+}
