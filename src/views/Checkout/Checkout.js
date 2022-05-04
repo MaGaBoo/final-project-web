@@ -89,19 +89,25 @@ const StripeForm = () => {
             );
           })}
         <h2 className="total">Total: {totalCart()}€</h2>
-        <br/>
-        <br/>
-        <br/>
-      <div className="product-headline">
-        <h3>Payment Method</h3>
-      </div>
-      <br/>
+        <br />
+        <br />
+        <br />
+        <div className="product-headline">
+          <h3>Payment Method</h3>
+        </div>
+        <br />
         <CardElement className="card" />
       </form>
-      <br/>
-        <button className="checkout" type="submit" disabled={!stripe || !elements}>
+      <br />
+      <div className="checkout-button">
+        <button
+          className="checkout"
+          type="submit"
+          disabled={!stripe || !elements}
+        >
           Checkout
         </button>
+      </div>
     </>
   );
 };

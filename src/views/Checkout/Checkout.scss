@@ -47,3 +47,7 @@
   font-family: $main-font;
   @include flex(flex, row, wrap, flex-end, align);
 }
+.checkout-button {
+  display: flex;
+  justify-content: flex-end;
+}
