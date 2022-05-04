@@ -6,7 +6,7 @@
 .header {
   @include flex(flex, row, wrap, center, center);
   text-align: left;
-  height: calc(60vh + 50px);
+  height: 100vh;
 
   &__left {
     @include flex(flex, column, wrap, center, flex-start);
@@ -40,6 +40,7 @@
   &__img {
     height: 650px;
     width: auto;
+    margin-top: 5rem;
   }
 }
 

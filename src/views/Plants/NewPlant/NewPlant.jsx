@@ -47,11 +47,10 @@ const NewPlant = () => {
   }
 
   return (
-    <>
+    <div className="new-plant">
       <h1>Create plant</h1>
         {errors && <div>Check all fields!</div>}
-      <form onSubmit={handleSubmit(onSubmit)}>
-      
+      <form onSubmit={handleSubmit(onSubmit)}>    
         <InputGroup
           label="Name:"
           id="commonName"
@@ -138,7 +137,7 @@ const NewPlant = () => {
 
         <button>Create</button>
       </form>
-    </>
+    </div>
   )
 }
 

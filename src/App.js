@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Cart />
+{/*       <Cart /> */}
 
       <div className="main">
         {!isAuthenticationFetched ? (

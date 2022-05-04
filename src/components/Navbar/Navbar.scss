@@ -16,6 +16,7 @@
   }
 
   &__menu {
+    @include flex(flex, row, wrap, flex-end, center);
     width: 80%;
     text-align: right;
     padding-right: 8%;
@@ -25,5 +26,21 @@
     color: $black-color;
     text-decoration: none;
     padding: 0 25px;
+  }
+
+  &__cart {
+
+    &-number {
+      position: relative;
+      top: 1rem;
+      left: 1.5rem;
+      background-color: $white-color;
+      border-radius: 50%;
+      width: 1.2rem;
+      height: 1.2rem;
+      text-align: center;
+      font-size: 1rem;
+
+    }
   }
 }
