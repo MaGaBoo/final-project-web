@@ -28,6 +28,15 @@
     padding: 0 25px;
   }
 
+  &__user {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $white-color;
+      transition: all 0.3s ease;
+    }
+  }
+
   &__cart {
 
     &-number {

@@ -90,8 +90,16 @@
   padding-bottom: 100px;
 
   &__single {
-    @include flex(flex, row, wrap, space-between, flex-start);
+    @include flex(flex, row, wrap, flex-start, flex-start);
     margin-top: 30px;
+  }
+
+  &__btn {
+    @include btn($secondary-color, $white-color);
+
+    &:hover {
+      @include btn($main-color, $white-color);
+    }
   }
 }
 

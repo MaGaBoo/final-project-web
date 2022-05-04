@@ -16,14 +16,15 @@ const Navbar = () => {
       {!user ?
         (
           <div className="navbar__menu">
+            <Link to="/shop" className="navbar__link">Shop</Link>
             <Link to="/register" className="navbar__link">Register</Link>
             <Link to="/login" className="navbar__link">Login</Link>
           </div>
         ) :
         (
-          <div className="navbar__menu"> 
+          <div className="navbar__menu">
             <Link to="/plant/new" className="navbar__link">Create plant</Link>
-            <Link to="/profile" className="navbar__link"><i class="fa fa-user-o" aria-hidden="true"></i></Link>
+            <Link to="/profile" className="navbar__link"><i class="fa fa-user-o navbar__user" aria-hidden="true"></i></Link>
             <Link to="/shoppingCart" className="navbar__link">
               <div className="navbar__cart">
                 <p className="navbar__cart-number">{cartItems.length}</p>
