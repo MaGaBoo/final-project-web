@@ -15,6 +15,9 @@
   align-items: $align;
 }
 
+@mixin shadow {
+  box-shadow: 0px 4px 24px rgba(123, 123, 123, 0.15);
+}
 
 /* MIXIN BTNS */
 @mixin btn($bg-color, $color) {
@@ -39,6 +42,7 @@
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 400;
+  transition: all 0.3s ease;
   cursor: pointer
 }
 
@@ -54,9 +58,30 @@ html {
 
 body {
   font-size: 1.8rem;
+  font-family: $secondary-font;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $main-font;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
 }
 
 .wrapper {

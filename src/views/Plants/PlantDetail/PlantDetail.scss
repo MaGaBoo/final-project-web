@@ -2,10 +2,54 @@
 @import "/src/assets/stylesheets/variables.scss";
 
 .container {
-    @include flex(flex, row, wrap, justify, align);
-
+    @include flex(flex, row, nowrap, justify, align);
+    padding: 3rem;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    
     .image {
-        width: 200px;
+       width: 500px;
+       height: 500px;
+       object-fit: contain;
     }
- 
+    .product-info {
+        width: 50%;
+        text-align: left;
+        padding-left: 1rem;
+    }
+    .product-name {
+        font-family: $main-font;
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+    .product-price {
+        color: $secondary-color;
+        font-weight: bolder;
+        margin-bottom: 1rem;
+        border-bottom: 0.8px solid $grey-color; 
+    }
+    .product-description {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem; 
+    }
+    .product-cares {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+    .product-owner {
+        margin-bottom: 1rem;
+    }
+    .edit-product {
+        font-size: 1.5rem;
+        color: $main-color;
+        text-decoration: none;
+    }
+}
+
+.add-button {
+    @include btn($secondary-color, $white-color);
+    text-align: center;
+    font-weight: bold;
 }

@@ -1,0 +1,113 @@
+@import "/src/assets/stylesheets/general_mixins.scss";
+@import "/src/assets/stylesheets/variables.scss";
+
+.profile {
+  margin-top: 50px;
+  width: 100%;
+
+  &__info {
+    @include flex(flex, column, wrap, center, flex-start);
+    background-color: $main-color;
+    padding: 5rem 21rem;
+    color: $white-color;
+  }
+
+
+  /* ORDERS */
+  &__orders {
+    @include flex(flex, column, wrap, flex-start, flex-start);
+    padding: 5rem 0;
+  }
+
+  &__order {
+    @include flex(flex, row, wrap, flex-start, center);
+    @include shadow();
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+
+
+    &-info {
+      width: 20%;
+    }
+
+    &-status {
+      width: 40%;
+    }
+
+    &-capture {
+      width: 40%;
+      height: 150px;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+
+  /* PLANTS */
+  &__plants {
+    @include flex(flex, row, wrap, flex-start, flex-start);
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+
+    &-cards {
+      @include flex(flex, row, wrap, flex-start, flex-start);
+    }   
+  }
+
+  
+  /* PLANT CARD */
+  &__card {
+    @include flex(flex, column, wrap, center, center);
+    width: 22%;
+    margin: 25px 1.5%;
+    @include shadow();
+
+    &-capture {
+      width: 100%;
+      height: 250px;
+    }
+  
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    &-info {
+      width: 100%;
+      padding: 2rem 0;
+    }
+  
+    &-name {
+      margin-bottom: 0.5rem;
+    }
+  
+    &-btns {
+      @include flex(flex, row, wrap, space-evenly, center);
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    &-edit {
+      @include btn-border($white-color, $secondary-color);
+  
+      &:hover {
+        @include btn($secondary-color, $white-color);
+      }
+    }
+  
+    &-btn {
+      @include btn-border($white-color, $secondary-color);
+  
+      &:hover {
+        @include btn($secondary-color, $white-color);
+      }
+    }
+  }
+
+}

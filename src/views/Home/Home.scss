@@ -1,2 +1,101 @@
 @import '/src/assets/stylesheets/general_mixins.scss';
 @import '/src/assets/stylesheets/variables.scss';
+
+
+/* HEADER */
+.header {
+  @include flex(flex, row, wrap, center, center);
+  text-align: left;
+  height: calc(60vh + 50px);
+
+  &__left {
+    @include flex(flex, column, wrap, center, flex-start);
+    width: 50%;
+    padding: 0 85px;
+    background-color: $third-color;
+    height: 100%
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    @include btn($secondary-color, $white-color);
+    margin-top: 25px;
+
+    &:hover {
+      @include btn($main-color, $white-color);
+    }
+  }
+
+  &__right {
+    @include flex(flex, row, wrap, flex-end, center);
+    width: 50%;
+    background-color: $main-color;
+    height: 100%;
+    text-align: right;
+  }
+
+  &__img {
+    height: 650px;
+    width: auto;
+  }
+}
+
+
+/* CONDITIONS */
+.conditions {
+  @include flex(flex, column, wrap, center, center);
+  padding-top: 175px;
+  padding-bottom: 125px;
+
+
+  &__cols {
+    @include flex(flex, row, wrap, space-between, center);
+  }
+
+  &__left {
+    width: 15%;
+    text-align: left;
+  }
+
+  &__single {
+    @include flex(flex, row, wrap, space-evenly, center);
+    width: 70%;
+  }
+
+  &__right {
+    width: 15%;
+    text-align: right;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+
+/* CATEGORIES */
+.categories {
+  @include flex(flex, row, wrap, space-evenly, center);
+}
+
+
+/* PRODUCTS */
+.products {
+  @include flex(flex, column, wrap, space-between, center);
+  padding-top: 175px;
+  padding-bottom: 100px;
+
+  &__single {
+    @include flex(flex, row, wrap, space-between, flex-start);
+    margin-top: 30px;
+  }
+}
+
+
+/* HANDS */
+.hands {
+  margin-bottom: -5px;
+}
