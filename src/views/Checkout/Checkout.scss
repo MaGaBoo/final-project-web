@@ -1,12 +1,16 @@
 @import "/src/assets/stylesheets/general_mixins.scss";
 @import "/src/assets/stylesheets/variables.scss";
 
+.main-checkout {
+  margin-top: 50px;
+}
 .product-headline {
   font-family: $main-font;
   background-color: $third-color;
   @include flex(flex, flex-start, wrap, space-between, center);
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 1.5rem;
+  margin: 0 1.5rem;
 
   .product-left {
     width: 30%;
@@ -18,8 +22,6 @@
     text-align: right;
   }
 }
-
-
 .product {
   background-color: $white-color;
   font-family: $main-font;
@@ -28,21 +30,18 @@
   @include flex(flex, flex-start, wrap, space-between, align);
   padding: 3rem;
   border-bottom: 0.8px solid $grey-color;
-
+  
   .product-image {
     float: left;
     width: 15rem;
     height: 15rem;
     object-fit: cover;
   }
-  .product-text {
-      @include flex(flex, column, wrap, flex-start, start);
-      width: 50%;
-      text-align: center;
-  }
 
   .remove {
       color: $main-color;
+      font-family: $secondary-font;
+      font-weight: 600;
       text-decoration: underline;
       font-size: 1.2rem;
       cursor: pointer;
@@ -51,14 +50,20 @@
   .product-capture {
     width: 30%;
   }
+  .product-text {
+    width: 50%;
+    text-align: right;
+  }
 
   .product-price {
     width: 20%;
     text-align: right;
+    font-weight: normal;
   }
 }
 
 .card {
+    margin: 0 1.5rem;
     padding: 0.8rem;
     border: 0.5px solid $grey-color
 }
@@ -71,9 +76,12 @@
 
 .total {
   font-family: $main-font;
+  font-size: 2.5rem;
   @include flex(flex, row, wrap, flex-end, align);
 }
-.checkout-button {
+.move-button {
+  margin: 3rem 1.5rem 0 1.5rem;
   display: flex;
   justify-content: flex-end;
+  
 }

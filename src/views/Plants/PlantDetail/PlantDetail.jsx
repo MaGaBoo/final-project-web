@@ -84,7 +84,7 @@ const PlantDetail = () => {
 
               <br />
               <br />
-              <div className="add-button">
+              <div>
                 {!user ? (
                   <p>You have to log in to buy this product</p>
                 ) : (
@@ -94,7 +94,7 @@ const PlantDetail = () => {
                         Add to cart
                       </button>
                     ) : (
-                      <p>✅ You have adopted this plant!</p>
+                      <p className="adopted-text">✅ You have adopted this plant!</p>
                     )}
                   </>
                 )}

@@ -58,7 +58,7 @@ const StripeForm = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="wrapper, main-checkout">
       <div className="product-headline">
         <div className="product-left">
           <h3>Product</h3>
@@ -110,9 +110,12 @@ const StripeForm = () => {
         <br />
         <CardElement className="card" />
           
+        <div className="move-button">
         <button className="checkout" type="submit" disabled={!stripe || !elements}>
           Checkout
         </button>
+
+        </div>
       </form>
       <br/>
 

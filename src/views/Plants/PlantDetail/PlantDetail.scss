@@ -53,3 +53,8 @@
     text-align: center;
     font-weight: bold;
 }
+.adopted-text {
+    @include btn($main-color, $white-color);
+    text-align: center;
+    font-weight: bold;
+}
