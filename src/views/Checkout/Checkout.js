@@ -17,7 +17,7 @@ const StripeForm = () => {
   const [user, setUser] = useState();
   const { userId } = useParams();
   const navigate = useNavigate();
-  const { cartItems, deleteProduct } = useCartContext();
+  const { cartItems, deleteProduct, setCartItems } = useCartContext();
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
@@ -52,6 +52,7 @@ const StripeForm = () => {
         paymentType: "card",
       }).then((result) => {
         localStorage.setItem("cart", JSON.stringify([]));
+        setCartItems([])
         navigate("/profile");
       });
     }
