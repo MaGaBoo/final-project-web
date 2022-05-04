@@ -7,10 +7,8 @@
 .product-headline {
   font-family: $main-font;
   background-color: $third-color;
-  @include flex(flex, flex-start, wrap, space-between, center);
-  font-size: 1rem;
-  padding: 1.5rem;
-  margin: 0 1.5rem;
+  @include flex(flex, row, wrap, space-between, center);
+  font-size: 1.8rem;
 
   .product-left {
     width: 30%;
@@ -22,66 +20,79 @@
     text-align: right;
   }
 }
-.product {
-  background-color: $white-color;
+
+.checkout-product {
+  @include flex(flex, row, wrap, center, center);
+  margin-top: 8rem;
+  @include shadow;
+  padding: 3rem 0;
+}
+
+.checkout-product-capture {
+  width: 30%;
+}
+
+.checkout-product-image {
+  width: 20rem;
+  height: 20rem;
+}
+
+.checkout-product-text {
+  width: 50%;
+  text-align: right;
+  @include flex(flex, column, wrap, center, flex-start);
+  padding-left: 5rem;
   font-family: $main-font;
-  font-weight: 900;
-  font-size: 1.8rem;
-  @include flex(flex, flex-start, wrap, space-between, align);
-  padding: 3rem;
-  border-bottom: 0.8px solid $grey-color;
-  
-  .product-image {
-    float: left;
-    width: 15rem;
-    height: 15rem;
-    object-fit: cover;
-  }
+  font-weight: bolder;
+  font-size: 2.5rem;
 
   .remove {
-      color: $main-color;
-      font-family: $secondary-font;
-      font-weight: 600;
-      text-decoration: underline;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-  .product-capture {
-    width: 30%;
-  }
-  .product-text {
-    width: 50%;
-    text-align: right;
-  }
-
-  .product-price {
-    width: 20%;
-    text-align: right;
-    font-weight: normal;
+    padding-top: 0.8rem;
+    font-family: $secondary-font;
+    color: $main-color;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: underline;
   }
 }
 
+.checkout-product-price {
+  width: 20%;
+  text-align: right;
+  font-weight: normal;
+  font-family: $secondary-font;
+  font-size: 1.8rem;
+  padding-right: 0.5rem;
+}
+
 .card {
-    margin: 0 1.5rem;
-    padding: 0.8rem;
-    border: 0.5px solid $grey-color
+  padding: 0.8rem;
+  border: 0.5px solid $grey-color;
 }
 
 .checkout {
   text-align: right !important;
-   @include btn($secondary-color, $white-color);
+  @include btn($secondary-color, $white-color);
   /*@include flex(flex, row, wrap, flex-end, align) */
 }
 
 .total {
   font-family: $main-font;
-  font-size: 2.5rem;
-  @include flex(flex, row, wrap, flex-end, align);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-top: 1.5rem;
+  @include flex(flex, row, wrap, flex-end, flex-end);
+  
+  .total-cart {
+    font-family: $secondary-font;
+    font-size: 1.8rem;
+    font-weight: normal;
+    padding-left: 2rem;
+    padding-right: 0.5rem;
+  }
 }
 .move-button {
   margin: 3rem 1.5rem 0 1.5rem;
   display: flex;
   justify-content: flex-end;
-  
 }
