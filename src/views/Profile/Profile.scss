@@ -2,13 +2,12 @@
 @import "/src/assets/stylesheets/variables.scss";
 
 .profile {
-  margin-top: 50px;
   width: 100%;
 
   &__info {
     @include flex(flex, column, wrap, center, flex-start);
     background-color: $main-color;
-    padding: 5rem 21rem;
+    padding: 10rem 21rem 5rem;
     color: $white-color;
   }
 

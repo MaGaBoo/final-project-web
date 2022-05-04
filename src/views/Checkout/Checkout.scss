@@ -25,8 +25,8 @@
   font-family: $main-font;
   font-weight: 900;
   font-size: 1.8rem;
-  @include flex(flex, flex-start, wrap, space-between, align);
-  padding: 3rem;
+/*   @include flex(flex, flex-start, wrap, space-between, align); */
+/*   padding: 3rem; */
   border-bottom: 0.8px solid $grey-color;
 
   .product-image {
