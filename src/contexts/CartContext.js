@@ -16,12 +16,6 @@ export const CartContextProvider = ({ children }) => {
       setCartItems([product, ...cartItems]);
     },[cartItems]);
 
-/*     const buyNoMore = useCallback(
-      () => {
-        setBuy(false)
-      }, []
-    )
- */
   const deleteProduct = (id) => setCartItems(cartItems.filter((product) => product.id !== id));
 
   const value = useMemo(
@@ -29,7 +23,7 @@ export const CartContextProvider = ({ children }) => {
       cartItems,
       addCart,
       deleteProduct,
-
+      setCartItems
     }),
     [cartItems, addCart, deleteProduct]
   );
