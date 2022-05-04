@@ -41,8 +41,8 @@ const Home = () => {
       <div className="conditions">
         <h2 className="conditions__title">Steps to start taking care of your plants</h2>
         <div className="conditions__cols">
-          <div className="conditions__left-image">
-            <img src={leftPlant} alt="" />
+          <div className="conditions__left">
+            <img src={leftPlant} alt="" className="conditions__image" />
           </div>
 
           <div className="conditions__single">
@@ -65,8 +65,8 @@ const Home = () => {
             />
           </div>
 
-          <div className="conditions__right-image">
-            <img src={rightPlant} alt="" />
+          <div className="conditions__right">
+            <img src={rightPlant} alt="" className="conditions__image" />
           </div>
         </div> 
       </div>

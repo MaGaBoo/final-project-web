@@ -55,20 +55,23 @@
     @include flex(flex, row, wrap, space-between, center);
   }
 
-  &__left-image {
+  &__left {
     width: 15%;
     text-align: left;
   }
-
 
   &__single {
     @include flex(flex, row, wrap, space-evenly, center);
     width: 70%;
   }
 
-  &__right-image {
+  &__right {
     width: 15%;
     text-align: right;
+  }
+
+  &__image {
+    width: 100%;
   }
 }
 

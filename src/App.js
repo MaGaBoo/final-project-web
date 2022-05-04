@@ -26,7 +26,7 @@ function App() {
       <Navbar />
       <Cart />
 
-      <div>
+      <div className="main">
         {!isAuthenticationFetched ? (
           <p>Loading...</p>
         ) : (
