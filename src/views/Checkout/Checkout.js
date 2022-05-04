@@ -109,11 +109,12 @@ const StripeForm = () => {
       </div>
       <br/>
         <CardElement className="card" />
-      </form>
-      <br/>
         <button className="checkout" type="submit" disabled={!stripe || !elements}>
           Checkout
         </button>
+      </form>
+      <br/>
+
     </div>
   );
 };
