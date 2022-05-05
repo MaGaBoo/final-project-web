@@ -11,9 +11,11 @@ const Cactus = () => {
   }, []);
 
   return (
-    <div>
-    <h1>Evergreen plants</h1>
-      <PlantsList plants={plants} />
+    <div className="cactus-category wrapper">
+      <h1>Evergreen plants</h1>
+      <div className="cactus-category__plants">
+        <PlantsList plants={plants} />
+      </div>
     </div>
   );
 };
