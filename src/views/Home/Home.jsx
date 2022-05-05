@@ -28,7 +28,7 @@ const Home = () => {
         <div className="header__left">
           <h1 className="header__title">The easy way to make healthy life by buying your favourite plantes</h1>
           <p>Very beautiful plant decorations to make your home environment so that the atmohphere becomes calmer.</p>
-          <button className="header__btn">Shop plants</button>
+          <Link to="/shop" className="header__btn">Shop plants</Link>
         </div>
 
         <div className="header__right">
@@ -108,7 +108,9 @@ const Home = () => {
 
 
       {/* LAST IMAGE */}
-      <img src={handsPlants} alt="hands-plants" className="hands" />
+      <div className="wrapper">
+        <img src={handsPlants} alt="hands-plants" className="hands" />
+      </div>
         
     </>
   )
