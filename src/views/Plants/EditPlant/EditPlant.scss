@@ -1,0 +1,14 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.edit-plant {
+  padding-top: 50px;
+
+  &__btn {
+    @include btn($secondary-color, $white-color);
+
+    &:hover {
+      @include btn($main-color, $white-color)
+    }
+  }
+}
