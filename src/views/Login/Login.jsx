@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { loginRequest } from '../../services/AuthService';
 import InputGroup from '../../components/InputGroup/InputGroup';
 import { useAuthContext } from '../../contexts/AuthContext';
+import Plant from '../../assets/images/login-plant.png'
 import './Login.scss';
 
 const schema = yup.object({
@@ -43,31 +44,36 @@ const Login = () => {
   };
 
   return (
-    <>
-      <h1>Login</h1>
+    <div className="login wrapper">
+      <div className="login__form">
+        <h1>Login</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-
-      <InputGroup
-        label="Email:"
-        id="email"
-        type="email"
-        register={register}
-        error={error || errors.email?.message}
-        />
-        
+        <form onSubmit={handleSubmit(onSubmit)} className="login__submit">
         <InputGroup
-        label="Password:"
-        id="password"
-        type="text"
-        register={register}
-        error={error || errors.password?.message}
-        />
+          label="Email:"
+          id="email"
+          type="email"
+          register={register}
+          error={error || errors.email?.message}
+          />
+          
+          <InputGroup
+          label="Password:"
+          id="password"
+          type="text"
+          register={register}
+          error={error || errors.password?.message}
+          />
 
-        <button>{isSubmitting ? 'Login...' : 'Submit'}</button> 
+          <button className="login__btn">{isSubmitting ? 'Login...' : 'Submit'}</button> 
+        </form>
+      </div>
 
-      </form>
-    </>
+      <div className="login__capture">
+        <img className="login__image" src={Plant} alt="" />
+      </div>
+
+    </div>
   )
 }
 
