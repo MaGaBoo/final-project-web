@@ -1,0 +1,16 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.form-inputs {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  &__label {
+
+  }
+
+  &__input {
+    height: 3rem;
+    width: 50%;
+  }
+}

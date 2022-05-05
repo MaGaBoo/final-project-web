@@ -7,7 +7,7 @@ const Footer = () => {
           <p>©2022 Oh My Plants</p>
         </div>
         <div className="footer__right">
-          <p>Made by Robert Cabrera y María Gallego</p>
+          <p>Made by Robert Cabrera & María Gallego</p>
         </div>    
     </div>
   );
