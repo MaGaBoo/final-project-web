@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useNavigate } from 'react-router-dom';
 import { registerRequest } from '../../services/AuthService';
 import InputGroup from '../../components/InputGroup/InputGroup';
+import People from '../../assets/images/register-people.png'
 import './Register.scss';
 
 
@@ -40,55 +41,58 @@ const Register = () => {
   };
   
 return (
-    <>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="register wrapper">
+      <div className="register__form">
+        <h1>Register</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="register__inputs">
+        
+          <InputGroup
+          label="Name:"
+          id="name"
+          type="text"
+          register={register}  
+          error={backErrors?.name || errors.name?.message}
+          />
       
-        <InputGroup
-        label="Name:"
-        id="name"
-        type="text"
-        register={register}  
-        error={backErrors?.name || errors.name?.message}
-        />
-    
 
-        <InputGroup
-        label="Location:"
-        id="location"
-        type="text"
-        register={register}
-        error={backErrors?.location || errors.location?.message}
-        />
+          <InputGroup
+          label="Location:"
+          id="location"
+          type="text"
+          register={register}
+          error={backErrors?.location || errors.location?.message}
+          />
 
-        <InputGroup
-        label="Address"
-        id="address"
-        type="text"
-        register={register}
-        error={backErrors.address || errors.address?.message}
-        />
-        
-        <InputGroup
-        label="Email:"
-        id="email"
-        type="email"
-        register={register}
-        error={backErrors?.email || errors.email?.message}
-        />
-        
-        <InputGroup
-        label="Password:"
-        id="password"
-        type="text"
-        register={register}
-        error={backErrors?.password || errors.password?.message}
-        />
-        
-        <button className="register-btn">{isSubmitting ? 'Submiting...' : 'Submit'}</button>
+          <InputGroup
+          label="Address"
+          id="address"
+          type="text"
+          register={register}
+          error={backErrors.address || errors.address?.message}
+          />
+          
+          <InputGroup
+          label="Email:"
+          id="email"
+          type="email"
+          register={register}
+          error={backErrors?.email || errors.email?.message}
+          />
+          
+          <InputGroup
+          label="Password:"
+          id="password"
+          type="text"
+          register={register}
+          error={backErrors?.password || errors.password?.message}
+          />
+          
+          <button className="register__btn">{isSubmitting ? 'Submiting...' : 'Submit'}</button>
+        </form>
+      </div>
 
-      </form>
-    </>
+      <img src={People} alt="" className="register__image" />
+    </div>
   )
 }
 

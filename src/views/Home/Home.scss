@@ -22,10 +22,12 @@
 
   &__btn {
     @include btn($secondary-color, $white-color);
+    font-size: 2.2rem;
     margin-top: 25px;
 
     &:hover {
       @include btn($main-color, $white-color);
+      font-size: 2.2rem;
     }
   }
 
