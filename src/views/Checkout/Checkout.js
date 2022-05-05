@@ -134,11 +134,11 @@ const StripeForm = () => {
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const CheckoutForm = () => (
-  <div>
+
     <Elements stripe={stripePromise}>
       <StripeForm />
     </Elements>
-  </div>
+
 );
 
 export default CheckoutForm;

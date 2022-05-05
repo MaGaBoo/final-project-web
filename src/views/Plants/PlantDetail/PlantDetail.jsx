@@ -67,21 +67,16 @@ const PlantDetail = () => {
                 <p>Difficulty: {product.difficulty}</p>
               </div>
               <div className="product-cares">
-                <p><i className="fa-solid fa-temperature-half"></i>  Temperature: {product.plantCare.temperature}</p>
-                <p><i className="fa-solid fa-sun"></i>  Light: {product.plantCare.light}</p>
-                <p><i className="fa-solid fa-droplet"></i>  Watering: {product.plantCare.watering}</p>
+                <p><i className="fa-solid fa-seedling"></i>  Temperature: {product.plantCare.temperature}</p>
+                <p><i className="fa-solid fa-seedling"></i>  Light: {product.plantCare.light}</p>
+                <p><i className="fa-solid fa-seedling"></i>  Watering: {product.plantCare.watering}</p>
                 <p><i className="fa-solid fa-paw"></i>  Pet Friendly: {product.petFriendly ? "Yes" : "No"}</p>
               </div>
               <div className="product-owner">
     
                 <p>Owner: {product.user.name}</p>
               </div>
-              <div>
-                <Link className="edit-product" to={`/plant/${product.id}/edit`}>
-                  Edit details
-                </Link>
-              </div>
-
+  
               <br />
               <br />
               <div>

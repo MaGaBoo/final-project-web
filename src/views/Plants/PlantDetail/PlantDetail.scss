@@ -3,9 +3,9 @@
 
 .container {
     @include flex(flex, row, nowrap, justify, align);
-    padding: 3rem;
+    margin-top: 100px;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: $secondary-font;
     
     .image {
@@ -16,23 +16,28 @@
     .product-info {
         width: 50%;
         text-align: left;
-        padding-left: 1rem;
+        padding-left: 3rem;
     }
     .product-name {
         font-family: $main-font;
         font-size: 3rem;
-        font-weight: 800;
+        font-weight: 600;
         margin-bottom: 1rem;
     }
     .product-price {
         color: $secondary-color;
         font-weight: bolder;
-        margin-bottom: 1rem;
+        padding-bottom: 1rem;
         border-bottom: 0.8px solid $grey-color; 
+        font-size: 1.8rem;
     }
     .product-description {
         margin-top: 1.5rem;
-        margin-bottom: 2rem; 
+        margin-bottom: 3rem; 
+    }
+    .product-details {
+        margin-top: 1.5rem;
+        margin-bottom: 3rem; 
     }
     .product-cares {
         margin-top: 1rem;
