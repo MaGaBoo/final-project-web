@@ -1,0 +1,47 @@
+@import "/src/assets/stylesheets/general_mixins.scss";
+@import "/src/assets/stylesheets/variables.scss";
+
+.container {
+    width: 30%;
+    margin-top: 100px;
+    margin-left: 7rem;
+    @include flex(flex, column, nowrap, flex-start, align);
+
+    .title {
+        color: $black-color;
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        margin-bottom: 3rem;
+        text-align:left;
+        border-bottom: 0.8px solid $grey-color; 
+    }
+    .order-info {
+        font-family: $secondary-font;
+        text-align:left;
+       
+        .order-date {
+            font-weight: bold;
+            padding-bottom: 1.5rem;
+            color: $secondary-color;
+        }
+        .total-price {
+            font-weight: bold;
+            padding-bottom: 1.5rem;
+        }
+        .ul-list {
+            list-style-type: none;
+            padding-bottom: 1rem;
+        }
+    }
+    .pics-container {
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        flex-direction: row;
+    }
+    .pics {
+        width: 5rem;
+        border: 0.2px solid $grey-color;
+        padding: 0.5px;
+    }
+  }

@@ -4,6 +4,7 @@
 .container {
     @include flex(flex, row, nowrap, justify, align);
     margin-top: 100px;
+    margin-bottom: 100px;
     justify-content: center;
     font-size: 1.4rem;
     font-family: $secondary-font;
