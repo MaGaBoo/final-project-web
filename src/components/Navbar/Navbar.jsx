@@ -25,11 +25,11 @@ const Navbar = () => {
           <div className="navbar__menu">
             <Link to="/shop" className="navbar__link">Shop</Link>
             <Link to="/plant/new" className="navbar__link">Create plant</Link>
-            <Link to="/profile" className="navbar__link"><i class="fa fa-user-o navbar__user" aria-hidden="true"></i></Link>
+            <Link to="/profile" className="navbar__link"><i className="fa fa-user-o navbar__user" aria-hidden="true"></i></Link>
             <Link to="/shoppingCart" className="navbar__link">
               <div className="navbar__cart">
                 <p className="navbar__cart-number">{cartItems.length}</p>
-                <i class="fa fa-shopping-cart navbar__cart-icon" aria-hidden="true"></i>
+                <i className="fa fa-shopping-cart navbar__cart-icon" aria-hidden="true"></i>
               </div>
             </Link>
             

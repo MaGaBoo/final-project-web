@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import InputGroup from '../../../components/InputGroup/InputGroup';
 import DropDownGroup from '../../../components/DropDownGroup/DropDownGroup';
+import Plant from '../../../assets/images/login-plant.png'
 import './NewPlant.scss';
 
 const NewPlant = () => {
@@ -47,96 +48,102 @@ const NewPlant = () => {
   }
 
   return (
-    <div className="new-plant">
-      <h1>Create plant</h1>
+    <div className="new-plant wrapper">
+      <div className="new-plant__form">
+        <h1>Create plant</h1>
         {errors && <div>Check all fields!</div>}
-      <form onSubmit={handleSubmit(onSubmit)}>    
-        <InputGroup
-          label="Name:"
-          id="commonName"
-          type="text"
-          register={register}
-        />
+        <form onSubmit={handleSubmit(onSubmit)} className="new-plant__inputs">    
+          <InputGroup
+            label="Name:"
+            id="commonName"
+            type="text"
+            register={register}
+          />
 
-        <InputGroup
-          label="Scientific name:"
-          id="scientificName"
-          type="text"
-          register={register}
-        />
+          <InputGroup
+            label="Scientific name:"
+            id="scientificName"
+            type="text"
+            register={register}
+          />
 
-        <InputGroup
-          label="Description:"
-          id="description"
-          type="text"
-          register={register}
-        />
+          <InputGroup
+            label="Description:"
+            id="description"
+            type="text"
+            register={register}
+          />
 
-        <InputGroup
-          label="Height:"
-          id="height"
-          type="number"
-          register={register}
-        />
+          <InputGroup
+            label="Height:"
+            id="height"
+            type="number"
+            register={register}
+          />
 
-        <InputGroup
-          label="Image:"
-          id="image"
-          type="file"
-          register={register}
-        />
+          <InputGroup
+            label="Image:"
+            id="image"
+            type="file"
+            register={register}
+          />
 
-        <DropDownGroup
-          label="Category:"
-          id="category"
-          values={["Evergreen", "Orchids", "Cactus and Succulents"]}
-          register={register}
-        />
+          <DropDownGroup
+            label="Category:"
+            id="category"
+            values={["Evergreen", "Orchids", "Cactus and Succulents"]}
+            register={register}
+          />
 
-        <InputGroup
-          label="Price:"
-          id="price"
-          type="number"
-          register={register}
-        />
+          <InputGroup
+            label="Price:"
+            id="price"
+            type="number"
+            register={register}
+          />
 
-        <InputGroup
-          label="Temperature:"
-          id="plantCare.temperature"
-          type="text"
-          register={register}
-        />
-        
-        <InputGroup
-          label="Light:"
-          id="plantCare.light"
-          type="text"
-          register={register}
-        />
+          <InputGroup
+            label="Temperature:"
+            id="plantCare.temperature"
+            type="text"
+            register={register}
+          />
+          
+          <InputGroup
+            label="Light:"
+            id="plantCare.light"
+            type="text"
+            register={register}
+          />
 
-        <InputGroup
-          label="Watering:"
-          id="plantCare.watering"
-          type="text"
-          register={register}
-        />
+          <InputGroup
+            label="Watering:"
+            id="plantCare.watering"
+            type="text"
+            register={register}
+          />
 
-        <InputGroup
-          label="Difficulty:"
-          id="difficulty"
-          type="text"
-          register={register}
-        />
+          <InputGroup
+            label="Difficulty:"
+            id="difficulty"
+            type="text"
+            register={register}
+          />
 
-        <InputGroup
-          label="Pet Friendly:"
-          id="petFriendly"
-          type="checkbox"
-          register={register}
-        />
+          <InputGroup
+            label="Pet Friendly:"
+            id="petFriendly"
+            type="checkbox"
+            register={register}
+          />
 
-        <button>Create</button>
-      </form>
+          <button className="new-plant__btn">Create</button>
+        </form>   
+      </div>
+
+      <div className="new-plant__capture">
+        <img src={Plant} alt="" className="new-plant__image" />
+      </div>
     </div>
   )
 }

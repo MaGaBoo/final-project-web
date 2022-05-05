@@ -66,7 +66,7 @@ const EditPlant = () => {
   }
 
   return (
-    <>
+    <div className="edit-plant wrapper">
       <h1>Edit your plant</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputGroup
@@ -153,9 +153,9 @@ const EditPlant = () => {
           register={register}
         />
 
-        <button>Update plant</button>
+        <button className="edit-plant__btn">Update plant</button>
       </form>
-    </>
+    </div>
   )
 }
 

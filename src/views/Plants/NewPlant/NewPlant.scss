@@ -1,6 +1,36 @@
 @import '/src/assets/stylesheets/general_mixins.scss';
 @import '/src/assets/stylesheets/variables.scss';
 
-/* .new-plant {
+.new-plant {
+  @include flex(flex, row, wrap, flex-start, flex-start);
+  padding-top: 50px;
+  
+  &__form {
+    width: 50%;
+  }
 
-} */
+  &__inputs {
+    width: 80%;
+  }
+
+  &__btn {
+    @include btn($secondary-color, $white-color);
+
+    &:hover{
+      @include btn($main-color, $white-color)
+    }
+  }
+
+  &__capture {
+    width: 50%;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+input#petFriendly {
+  width: 3rem;
+  height: 3rem;
+}

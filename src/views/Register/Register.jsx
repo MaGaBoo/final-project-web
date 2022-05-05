@@ -91,7 +91,7 @@ return (
         </form>
       </div>
 
-      <img src={People} alt="" className="register__image" />
+        <img src={People} alt="" className="register__image" />
     </div>
   )
 }
