@@ -23,6 +23,7 @@ const Navbar = () => {
         ) :
         (
           <div className="navbar__menu">
+            <Link to="/shop" className="navbar__link">Shop</Link>
             <Link to="/plant/new" className="navbar__link">Create plant</Link>
             <Link to="/profile" className="navbar__link"><i class="fa fa-user-o navbar__user" aria-hidden="true"></i></Link>
             <Link to="/shoppingCart" className="navbar__link">
