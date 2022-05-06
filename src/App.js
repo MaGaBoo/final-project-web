@@ -18,6 +18,7 @@ import CheckoutForm from "./views/Checkout/Checkout";
 import Cart from "./components/Cart/Cart";
 import OrderDetail from "./views/Orders/OrderDetail/OrderDetail";
 import Shop from "./views/Shop/Shop";
+import ThankOrder from "./views/Orders/ThankOrder/ThankOrder";
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -44,11 +45,11 @@ function App() {
 
             <Route path="/" element={<ProtectedRoute />}>
               <Route path="profile" element={<Profile />} />
-              {/* <Route path="orders" element={<Orders />} /> */}
               <Route path="plant/new" element={<NewPlant />} />
               <Route path="plant/:id/edit" element={<EditPlant />} />
               <Route path="shoppingCart" element={<CheckoutForm />} /> 
               <Route path="order/:id" element={<OrderDetail />} />
+              <Route path="thank-you" element={<ThankOrder />} />
             </Route>
           </Routes>
 

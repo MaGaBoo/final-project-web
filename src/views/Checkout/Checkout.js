@@ -53,7 +53,7 @@ const StripeForm = () => {
       }).then((result) => {
         localStorage.setItem("cart", JSON.stringify([]));
         setCartItems([])
-        navigate("/profile");
+        navigate("/thank-you");
       });
     }
   };
