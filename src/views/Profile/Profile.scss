@@ -7,7 +7,7 @@
   &__info {
     @include flex(flex, column, wrap, center, flex-start);
     background-color: $main-color;
-    padding: 10rem 21rem 5rem;
+    padding: 10rem 8rem 5rem;
     color: $white-color;
   }
 
