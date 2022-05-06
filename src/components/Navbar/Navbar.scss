@@ -52,14 +52,23 @@
 
     }
   }
+  .dropdown {
+    font-family: $secondary-font;
+    border-radius: 5px;
+  }
+  .dropdown-menu {
+    width: 150px;
+    background-color: $third-color;
+  }
   .dropdown-products {
     @include flex(flex, row, nowrap, space-between, align);
+    padding: 0.2rem 0.8rem;
 
     .dropdown-price {
       padding-bottom: 0.5rem;
     }
   }
   .dropdown-button {
-    @include btn($secondary-color, $white-color)
+    @include btn($secondary-color, $white-color);
   }
 }
