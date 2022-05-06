@@ -8,6 +8,7 @@
   width: 100%;
   height: 50px;
   border-bottom: solid 1px rgba($color: #000000, $alpha: 0.1);
+  padding: 0;
 
   &__logo {
     @include flex(flex, row, wrap, flex-start, center);
@@ -49,6 +50,7 @@
 
     &:hover {
       border-bottom: 1px solid $black-color;
+      color: $black-color;
     }
 
     &--logo:hover {
@@ -72,7 +74,8 @@
       width: 1.2rem;
       height: 1.2rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.2rem;
+      line-height: 1;
     }
   }
 
@@ -90,6 +93,7 @@
   .dropdown {
     font-family: $secondary-font;
     border-radius: 5px;
+    margin-top: -5px;
   }
   .dropdown-menu {
     width: 200px;

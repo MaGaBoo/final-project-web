@@ -2,7 +2,7 @@
 @import "/src/assets/stylesheets/variables.scss";
 
 .main-checkout {
-  margin-top: 150px !important;
+  margin-top: 7rem !important;
 }
 .product-headline {
   font-family: $main-font;
@@ -23,9 +23,8 @@
 
 .checkout-product {
   @include flex(flex, row, wrap, center, center);
-  margin-top: 8rem;
+  margin-top: 2rem;
   @include shadow;
-  padding: 3rem 0;
 }
 
 .checkout-product-capture {

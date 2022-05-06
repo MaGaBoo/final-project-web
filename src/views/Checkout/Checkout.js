@@ -29,6 +29,7 @@ const StripeForm = () => {
     }, 0);
   };
 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 

@@ -51,7 +51,7 @@
   &__plants {
     @include flex(flex, row, wrap, flex-start, flex-start);
     padding-top: 5rem;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
 
     &-cards {
       @include flex(flex, row, wrap, flex-start, flex-start);
@@ -79,7 +79,7 @@
   
     &-info {
       width: 100%;
-      padding: 2rem 0;
+      padding: 2rem 1rem;
     }
   
     &-name {

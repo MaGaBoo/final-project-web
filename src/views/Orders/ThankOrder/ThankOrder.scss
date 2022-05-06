@@ -3,13 +3,8 @@
 
 .thanks-order {
   @include flex(flex, column, wrap, flex-start, center);
-  padding-top: 50px;
-  height: calc(100vh - 41px);
+  padding-top: 70px;
   text-align: center;
-
-  &__info {
-    margin-top: 20rem;
-  }
 
   &__icon {
     color: $main-color;
