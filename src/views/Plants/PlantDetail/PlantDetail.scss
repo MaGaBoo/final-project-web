@@ -1,9 +1,10 @@
 @import "/src/assets/stylesheets/general_mixins.scss";
 @import "/src/assets/stylesheets/variables.scss";
 
-.container {
-  @include flex(flex, column, nowrap, flex-start, align);
-  margin-top: 100px;
+.detail {
+  @include flex(flex, row, nowrap, flex-start, flex-start);
+  margin-top: 50px !important;
+  padding: 8rem 0px;
   margin-bottom: 100px;
   justify-content: center;
   font-size: 1.4rem;

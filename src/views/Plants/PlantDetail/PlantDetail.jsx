@@ -42,7 +42,7 @@ const PlantDetail = () => {
     <>
       {product && product.plantCare && (
         <>
-          <div className="container">
+          <div className="detail wrapper">
             <div className="product-image">
               <img
                 className="image"
