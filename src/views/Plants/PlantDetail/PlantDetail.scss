@@ -2,65 +2,69 @@
 @import "/src/assets/stylesheets/variables.scss";
 
 .container {
-    @include flex(flex, row, nowrap, justify, align);
-    margin-top: 100px;
-    margin-bottom: 100px;
-    justify-content: center;
-    font-size: 1.4rem;
-    font-family: $secondary-font;
-    
+  @include flex(flex, column, nowrap, flex-start, align);
+  margin-top: 100px;
+  margin-bottom: 100px;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-family: $secondary-font;
+
+  .product-image {
+    width: 50%;
+
     .image {
-       width: 500px;
-       height: 500px;
-       object-fit: contain;
+      width: 500px;
+      height: 500px;
+      object-fit: contain;
     }
-    .product-info {
-        width: 50%;
-        text-align: left;
-        padding-left: 3rem;
-    }
-    .product-name {
-        font-family: $main-font;
-        font-size: 3rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
-    .product-price {
-        color: $secondary-color;
-        font-weight: bolder;
-        padding-bottom: 1rem;
-        border-bottom: 0.8px solid $grey-color; 
-        font-size: 1.8rem;
-    }
-    .product-description {
-        margin-top: 1.5rem;
-        margin-bottom: 3rem; 
-    }
-    .product-details {
-        margin-top: 1.5rem;
-        margin-bottom: 3rem; 
-    }
-    .product-cares {
-        margin-top: 1rem;
-        margin-bottom: 3rem;
-    }
-    .product-owner {
-        margin-bottom: 1rem;
-    }
-    .edit-product {
-        font-size: 1.5rem;
-        color: $main-color;
-        text-decoration: none;
-    }
+  }
+  .product-info {
+    width: 50%;
+    text-align: left;
+    padding-left: 3rem;
+  }
+  .product-name {
+    font-family: $main-font;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .product-price {
+    color: $secondary-color;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+    border-bottom: 0.8px solid $grey-color;
+    font-size: 1.8rem;
+  }
+  .product-description {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .product-details {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .product-cares {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .product-owner {
+    margin-bottom: 1rem;
+  }
+  .edit-product {
+    font-size: 1.5rem;
+    color: $main-color;
+    text-decoration: none;
+  }
 }
 
 .add-button {
-    @include btn($secondary-color, $white-color);
-    text-align: center;
-    font-weight: bold;
+  @include btn($secondary-color, $white-color);
+  text-align: center;
+  font-weight: bold;
 }
 .adopted-text {
-    @include btn($main-color, $white-color);
-    text-align: center;
-    font-weight: bold;
+  @include btn($main-color, $white-color);
+  text-align: center;
+  font-weight: bold;
 }

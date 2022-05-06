@@ -12,7 +12,7 @@ const Orchids = () => {
 
   return (
     <div className="orchids-category wrapper">
-      <h1>Evergreen plants</h1>
+      <h1>Orchids</h1>
       <div className="orchids-category__plants">
         <PlantsList plants={plants} />
       </div>

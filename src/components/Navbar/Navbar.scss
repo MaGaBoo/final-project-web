@@ -52,4 +52,14 @@
 
     }
   }
+  .dropdown-products {
+    @include flex(flex, row, nowrap, space-between, align);
+
+    .dropdown-price {
+      padding-bottom: 0.5rem;
+    }
+  }
+  .dropdown-button {
+    @include btn($secondary-color, $white-color)
+  }
 }
