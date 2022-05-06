@@ -12,7 +12,7 @@ const Cactus = () => {
 
   return (
     <div className="cactus-category wrapper">
-      <h1>Evergreen plants</h1>
+      <h1>Cactus and Succulents</h1>
       <div className="cactus-category__plants">
         <PlantsList plants={plants} />
       </div>
