@@ -21,7 +21,7 @@ const StripeForm = () => {
 
   useEffect(() => {
     getCurrentUser(userId).then((user) => setUser(user));
-  }, [userId]); // en onlyhacks esto está vacío
+  }, [userId]); 
 
   const totalCart = () => {
     return cartItems.reduce((acc, product) => {

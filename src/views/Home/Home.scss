@@ -64,7 +64,7 @@
   }
 
   &__single {
-    @include flex(flex, row, wrap, space-evenly, center);
+    @include flex(flex, row, wrap, space-evenly, flex-start);
     width: 70%;
   }
 

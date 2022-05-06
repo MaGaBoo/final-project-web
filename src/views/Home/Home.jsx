@@ -26,8 +26,8 @@ const Home = () => {
       {/* HEADER */}
       <div className="header">
         <div className="header__left">
-          <h1 className="header__title">The easy way to make healthy life by buying your favourite plantes</h1>
-          <p>Very beautiful plant decorations to make your home environment so that the atmohphere becomes calmer.</p>
+          <h1 className="header__title">Get your plants from people who love plants</h1>
+          <p>The place where individuals buy and sell house plants to build a more sustainable world.</p>
           <Link to="/shop" className="header__btn">Shop plants</Link>
         </div>
 
@@ -39,7 +39,7 @@ const Home = () => {
 
       {/* CONDITIONS */}
       <div className="conditions">
-        <h2 className="conditions__title">Steps to start taking care of your plants</h2>
+        <h2 className="conditions__title">Circular economy and plants</h2>
         <div className="conditions__cols">
           <div className="conditions__left">
             <img src={leftPlant} alt="" className="conditions__image" />
@@ -48,20 +48,20 @@ const Home = () => {
           <div className="conditions__single">
             <Conditions
               img=""
-              title="Fastest delivery"
-              text="Your food is delivered on time anywhere in the city."
+              title="Sustainability"
+              text="Let's give new life and enjoy what we already have"
             />
 
             <Conditions
               img=""
-              title="Pest Anticipation"
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              title="Quality"
+              text="Buy healthier plants (and pay less!)"
             />
 
             <Conditions
               img=""
-              title="Lorem Ipsum"
-              text="Nulla placerat neque sed lacus porttitor bibendum."
+              title="Ethics"
+              text="Help us create a business model that respects the natural cycles of plants"
             />
           </div>
 
