@@ -65,9 +65,11 @@ const Navbar = () => {
                     )}
                     <div className="dropdown-products">
                       <div className="dropdown-total">Total</div>
-                      <div>{totalCart()}€</div>
+                      <div className="dropdown-total-number">{totalCart()}€</div>
                     </div>  
-                    <button className="dropdown-button" >Ver cesta</button>
+                    <div className="button-container">
+                    <button className="dropdown-button" >View cart</button>
+                    </div>
                   </ul>
                 </div>
               </div>

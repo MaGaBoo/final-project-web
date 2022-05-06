@@ -92,18 +92,33 @@
     border-radius: 5px;
   }
   .dropdown-menu {
-    width: 150px;
+    width: 200px;
     background-color: $third-color;
   }
   .dropdown-products {
     @include flex(flex, row, nowrap, space-between, align);
-    padding: 0.2rem 0.8rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+
+    .dropdown-total {
+      font-weight: bold;
+
+    }
+    .dropdown-total-number {
+      font-weight: bold;
+    }
 
     .dropdown-price {
       padding-bottom: 0.5rem;
     }
   }
+  .button-container {
+    @include flex(flex, row, nowrap, center, center);
+    padding: 1rem;
+  }
   .dropdown-button {
     @include btn($secondary-color, $white-color);
-  }
+    font-size: 1.2rem
+ 
+    }
 }
