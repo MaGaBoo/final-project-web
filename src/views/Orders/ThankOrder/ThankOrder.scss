@@ -1,0 +1,30 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.thanks-order {
+  @include flex(flex, column, wrap, flex-start, center);
+  padding-top: 50px;
+  height: calc(100vh - 41px);
+  text-align: center;
+
+  &__info {
+    margin-top: 20rem;
+  }
+
+  &__icon {
+    color: $main-color;
+    font-size: 10rem;
+    font-weight: 300 !important;
+  }
+
+  &__btn {
+    @include btn($secondary-color, $white-color);
+    margin: 3rem auto;
+    display: block;
+    width: 30%;
+
+    &:hover {
+      @include btn($main-color, $white-color)
+    }
+  }
+}
