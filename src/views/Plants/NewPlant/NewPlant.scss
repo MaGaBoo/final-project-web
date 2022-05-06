@@ -3,7 +3,7 @@
 
 .new-plant {
   @include flex(flex, row, wrap, flex-start, flex-start);
-  padding-top: 50px;
+  padding: 50px 0;
   
   &__form {
     width: 50%;

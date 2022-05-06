@@ -3,8 +3,8 @@
 
 .detail {
   @include flex(flex, row, nowrap, flex-start, flex-start);
-  margin-top: 50px !important;
-  padding: 8rem 0px;
+  margin-top: 20px !important;
+  padding: 5rem 0px;
   margin-bottom: 100px;
   justify-content: center;
   font-size: 1.4rem;
