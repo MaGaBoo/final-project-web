@@ -6,6 +6,10 @@
   width: 22%;
   margin: 25px 1.5%;
 
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
   &__capture {
     width: 100%;
   }
