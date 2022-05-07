@@ -17,30 +17,69 @@ const Navbar = () => {
 
 
   return (
-   <nav className="navbar">
+<nav className="navbar navbar-expand-lg navbar-light bg-main" aria-label="Third navbar example">
+  <div>
+    <button
+      className="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample03"
+      aria-controls="navbarsExample03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+    <div className="navbar-collapse collapse" id="navbarsExample03">
+    <ul className="navbar-nav">
       <div className="navbar__logo">
-        <Link to="/" className="navbar__link navbar__link--logo">
-          <div className="navbar__myplants">
-            <img src={Isotipo} alt="" className="navbar__isotipo" />
-            <span className="navbar__logotipo">Oh My Plants</span>
-          </div>
-        </Link>
+        <li className="nav-item">
+          <Link to="/" className="navbar__link navbar__link--logo">
+            <div className="navbar__myplants">
+              <img src={Isotipo} alt="" className="navbar__isotipo" />
+              <span className="navbar__logotipo">Oh My Plants</span>
+            </div>
+          </Link>
+        </li>
       </div>
-      {!user ?
-        (
-          <div className="navbar__menu">
+
+        {!user ?
+          (
+        <div className="navbar__menu">
+          <li className="nav-item">
             <Link to="/shop" className="navbar__link">Shop</Link>
+          </li>
+
+          <li className="nav-item">
             <Link to="/register" className="navbar__link">Register</Link>
+          </li>
+
+          <li className="nav-item">
             <Link to="/login" className="navbar__link">Login</Link>
-          </div>
+          </li>
+
+        </div>
+
         ) :
         (
           <div className="navbar__menu">
-            <Link to="/shop" className="navbar__link">Shop</Link>
-            <Link to="/plant/new" className="navbar__link">Create plant</Link>
-            <Link to="/profile" className="navbar__link">
-              <i className="fa fa-user-o navbar__user" aria-hidden="true"></i>
-            </Link>
+
+            <li className="nav-item">
+              <Link to="/shop" className="navbar__link">Shop</Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to="/plant/new" className="navbar__link">Create plant</Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to="/profile" className="navbar__link">
+                <i className="fa fa-user-o navbar__user" aria-hidden="true"></i>
+              </Link>
+            </li>
+
+            <li className="nav-item">
             <Link to="/shoppingCart" className="navbar__link">
               <div className="navbar__cart">
                 <p className="navbar__cart-number">{cartItems.length}</p>
@@ -74,11 +113,20 @@ const Navbar = () => {
                 </div>
               </div>
             </Link>
-            <button onClick={logout} className="navbar__logout">Logout</button>
+            </li>
+
+            <li className="nav-item">
+              <button onClick={logout} className="navbar__logout">Logout</button>
+            </li>
+
           </div>
-        )   
+        )
       }
-    </nav>
+
+      </ul>
+    </div>
+  </div>
+</nav>
   );
 };
 

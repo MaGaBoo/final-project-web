@@ -10,15 +10,26 @@
   border-bottom: solid 1px rgba($color: #000000, $alpha: 0.1);
   padding: 0;
 
+  @media (max-width: 768px) {
+    height: auto;
+    justify-content: flex-start;
+    background-color: #F9F7F1;
+    position: inherit;
+  }
+
   &__logo {
     @include flex(flex, row, wrap, flex-start, center);
     width: 30%;
     text-align: left;
     padding-left: 4%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__myplants {
-    @include flex(flex, row, wrap, flex-start, flex-end);
+    @include flex(flex, row, wrap, flex-start, center);
   }
   &__isotipo {
     width: 8%;
@@ -38,6 +49,12 @@
     width: 70%;
     text-align: right;
     padding-right: 8%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__link {
@@ -89,6 +106,10 @@
       font-size: 1.6rem;
       border-width: 1.9px;
     }
+
+    @media (max-width: 768px) {
+    margin: 0 25px;
+    }
   }
   .dropdown {
     font-family: $secondary-font;
@@ -125,4 +146,10 @@
     font-size: 1.2rem
  
     }
+}
+
+.navbar-collapse {
+  @media (max-width: 768px) {
+    background-color: $third-color;
+  }
 }
