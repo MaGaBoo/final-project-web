@@ -47,19 +47,19 @@ const Home = () => {
 
           <div className="conditions__single">
             <Conditions
-              img=""
+              img={<i className="fa fa-globe conditions__icon" aria-hidden="true"></i>}
               title="Sustainability"
               text="Let's give new life and enjoy what we already have"
             />
 
             <Conditions
-              img=""
+              img={<i className="fa fa-trophy conditions__icon" aria-hidden="true"></i>}
               title="Quality"
               text="Buy healthier plants (and pay less!)"
             />
 
             <Conditions
-              img=""
+              img={<i className="fa fa-heart conditions__icon" aria-hidden="true"></i>}
               title="Ethics"
               text="Help us create a business model that respects the natural cycles of plants"
             />

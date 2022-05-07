@@ -4,12 +4,15 @@
 .register {
   @include flex(flex, column, wrap, space-between, center);
   padding-top: 50px;
-  height: calc(100vh - 41px);
 
   &__form {
     padding-top: 10rem;
     width: 50%;
-    text-align: center
+    text-align: center;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 
   &__inputs {

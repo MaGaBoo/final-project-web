@@ -5,4 +5,8 @@
   @include flex(flex, row, wrap, flex-start, flex-start);
   margin-top: 5rem;
   padding: 5rem 0;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }

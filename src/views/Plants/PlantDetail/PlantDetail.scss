@@ -2,7 +2,7 @@
 @import "/src/assets/stylesheets/variables.scss";
 
 .detail {
-  @include flex(flex, row, nowrap, flex-start, flex-start);
+  @include flex(flex, row, wrap, flex-start, flex-start);
   margin-top: 20px !important;
   padding: 5rem 0px;
   margin-bottom: 100px;
@@ -10,19 +10,35 @@
   font-size: 1.4rem;
   font-family: $secondary-font;
 
+
   .product-image {
     width: 50%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .image {
       width: 500px;
       height: 500px;
       object-fit: contain;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+
     }
   }
   .product-info {
     width: 50%;
     text-align: left;
     padding-left: 3rem;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding-left: 0;
+    }
   }
   .product-name {
     font-family: $main-font;

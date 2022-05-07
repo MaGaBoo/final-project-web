@@ -8,15 +8,29 @@
   &__form {
     @include flex(flex, column, wrap, center, flex-start);
     width: 50%;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      margin: 0 auto;
+      padding: 5rem 0;
+    }
   }
 
   &__submit {
     @include flex(flex, column, wrap, flex-start, flex-start);
     width: 70%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__capture {
     width: 50%;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__image {
