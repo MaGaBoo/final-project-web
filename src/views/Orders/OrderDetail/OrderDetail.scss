@@ -7,6 +7,11 @@
     margin-left: 7rem;
     @include flex(flex, column, nowrap, flex-start, align);
 
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 0 10px;
+    }
+
     .title {
         color: $black-color;
         font-size: 3rem;

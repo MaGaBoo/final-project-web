@@ -4,9 +4,15 @@
 .new-plant {
   @include flex(flex, row, wrap, flex-start, flex-start);
   padding: 50px 0;
-  
+
+
   &__form {
     width: 50%;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      @include flex(flex,row, wrap, center, flex-start)
+    }
   }
 
   &__inputs {
@@ -27,6 +33,10 @@
 
   &__image {
     width: 100%;
+
+    @media (max-width: 768px) {
+      display: none;
+     }
   }
 }
 
