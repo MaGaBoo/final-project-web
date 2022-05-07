@@ -1,15 +1,16 @@
 @import "/src/assets/stylesheets/general_mixins.scss";
 @import "/src/assets/stylesheets/variables.scss";
 
-.container {
-    width: 30%;
-    margin-top: 100px;
+.my-order {
+    margin-top: 100px !important;
     margin-left: 7rem;
-    @include flex(flex, column, nowrap, flex-start, align);
+    @include flex(flex, column, nowrap, flex-start, stretch);
 
     @media (max-width: 768px) {
         width: 100%;
         padding: 0 10px;
+        margin-left: 0;
+        margin-top: 50px !important;
     }
 
     .title {
@@ -39,13 +40,13 @@
         }
     }
     .pics-container {
-        width: 5rem;
-        height: 5rem;
+        width: 7rem;
+        height: 7rem;
         display: flex;
         flex-direction: row;
     }
     .pics {
-        width: 5rem;
+        width: 7rem;
         border: 0.2px solid $grey-color;
         padding: 0.5px;
     }

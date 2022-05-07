@@ -15,7 +15,7 @@ const OrderDetail = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="my-order wrapper">
         <h3 className="title">My orders</h3>
 
         <div className="order-info">
