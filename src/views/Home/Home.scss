@@ -8,6 +8,10 @@
   text-align: left;
   height: 100vh;
 
+  @media (max-width: 768px) {
+    height: 80vh;
+  }
+
   &__left {
     @include flex(flex, column, wrap, center, flex-start);
     width: 50%;
@@ -65,6 +69,13 @@
   @media (max-width: 768px) {
     width: 90%;
     margin: 0 auto;
+    padding-top: 75px;
+  }
+
+  &__title {
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 
 
@@ -125,6 +136,7 @@
 
   @media (max-width: 768px) {
     width: 100%;
+    padding-top: 75px;
   }
 
   
