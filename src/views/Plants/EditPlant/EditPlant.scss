@@ -3,6 +3,11 @@
 
 .edit-plant {
   padding-top: 50px;
+  padding-bottom: 75px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 
   &__btn {
     @include btn($secondary-color, $white-color);

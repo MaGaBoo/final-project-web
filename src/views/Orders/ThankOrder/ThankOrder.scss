@@ -6,6 +6,12 @@
   padding-top: 70px;
   text-align: center;
 
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
   &__icon {
     color: $main-color;
     font-size: 10rem;
@@ -20,6 +26,10 @@
 
     &:hover {
       @include btn($main-color, $white-color)
+    }
+
+    @media (max-width: 768px) {
+      width: 60%;
     }
   }
 }

@@ -70,11 +70,13 @@
     width: 90%;
     margin: 0 auto;
     padding-top: 75px;
+    padding-bottom: 75px;
   }
 
   &__title {
     @media (max-width: 768px) {
       text-align: center;
+      margin-bottom: 4rem;
     }
   }
 
