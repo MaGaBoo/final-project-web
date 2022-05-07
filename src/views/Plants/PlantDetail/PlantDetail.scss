@@ -10,12 +10,19 @@
   font-size: 1.4rem;
   font-family: $secondary-font;
 
+  @media (max-width: 768px) {
+    padding: 0;
+    padding-bottom: 75px;
+    margin: 0;
+  }
+
 
   .product-image {
     width: 50%;
 
     @media (max-width: 768px) {
       width: 100%;
+      margin-bottom: 3rem;
     }
 
     .image {
@@ -25,9 +32,8 @@
 
       @media (max-width: 768px) {
         width: 100%;
+        height: auto;
       }
-
-
     }
   }
   .product-info {
