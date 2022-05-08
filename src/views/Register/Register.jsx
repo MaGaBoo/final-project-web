@@ -82,7 +82,7 @@ return (
           <InputGroup
           label="Password:"
           id="password"
-          type="text"
+          type="password"
           register={register}
           error={backErrors?.password || errors.password?.message}
           />
